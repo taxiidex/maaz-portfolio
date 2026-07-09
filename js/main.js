@@ -747,6 +747,24 @@
       });
     });
 
+    // — project history cards: batched stagger reveal
+    if (typeof ScrollTrigger.batch === 'function') {
+      ScrollTrigger.batch('.proj-card', {
+        start: 'top 92%',
+        once: true,
+        onEnter: (batch) => gsap.from(batch, {
+          y: 48, autoAlpha: 0, duration: 0.8, stagger: 0.08, ease: 'power3.out', overwrite: true,
+        }),
+      });
+    } else {
+      gsap.utils.toArray('.proj-card').forEach((card) => {
+        gsap.from(card, {
+          y: 48, autoAlpha: 0, duration: 0.8, ease: 'power3.out',
+          scrollTrigger: { trigger: card, start: 'top 90%', once: true },
+        });
+      });
+    }
+
     // — footer
     gsap.from('.footer', {
       autoAlpha: 0,
