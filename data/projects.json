@@ -1,0 +1,519 @@
+[
+  {
+    "slug": "dispatch-pro",
+    "title": "Dispatch Pro",
+    "category": "Logistics & Ride Dispatch",
+    "type": "app",
+    "tagline": "Real-time logistics & ride-dispatch super-app.",
+    "metaTitle": "Dispatch Pro — Logistics Super-App Case Study | Maaz Zindani",
+    "metaDescription": "How I built Dispatch Pro, a real-time logistics and ride-dispatch super-app that onboarded 2,500 drivers and 12,000 riders in 60 days on a Kafka-backed live pipeline.",
+    "keywords": ["logistics app development", "ride dispatch app", "real-time delivery app", "Flutter logistics app", "Kafka mobile backend"],
+    "links": { "appStore": "https://apps.apple.com/pk/app/dispatch-pro-driver/id6738958178" },
+    "operatingSystem": "iOS, Android",
+    "applicationCategory": "BusinessApplication",
+    "tech": ["FLUTTER", "KOTLIN", "SPRING BOOT", "KAFKA", "AWS"],
+    "metrics": [
+      { "value": "2,500", "label": "drivers onboarded" },
+      { "value": "12,000", "label": "riders onboarded" },
+      { "value": "60 days", "label": "to launch v1" }
+    ],
+    "role": "Lead Mobile App Developer & Product Owner",
+    "lead": "Dispatch Pro is a real-time logistics and ride-dispatch platform I conceived and owned end to end — the driver and passenger apps, the live dispatch pipeline, and the DevOps that keeps it running around the clock.",
+    "sections": [
+      { "h2": "The challenge", "body": "A logistics operator needed to move from spreadsheets and phone calls to a live, GPS-driven dispatch system — fast. The bar was a working v1 in weeks, not quarters, with enough resilience to onboard thousands of drivers and riders without falling over." },
+      { "h2": "What I built", "body": "Native-feeling Flutter driver and passenger apps sitting on a Spring Boot + WebFlux backend, with Apache Kafka carrying location and order events in real time. Trips, driver state, and dispatch all flow through the event pipeline so the map stays live even under load." },
+      { "h2": "Stack & operations", "body": "Flutter and Kotlin on the client, Spring Boot / WebFlux and Kafka on the server, deployed on AWS with a Docker + Kubernetes pipeline for zero-downtime releases every few days. I ran the DevOps as well as the mobile build." },
+      { "h2": "Outcome", "body": "Version one shipped in nine weeks and onboarded 2,500 drivers and 12,000 riders inside 60 days, holding up through the launch surge." }
+    ],
+    "related": ["loade-driver", "taxidex", "carservices"]
+  },
+  {
+    "slug": "qist-bazaar",
+    "title": "Qist Bazaar",
+    "category": "Fintech · Buy Now Pay Later",
+    "type": "app",
+    "tagline": "Buy-now-pay-later fintech platform, built from scratch.",
+    "metaTitle": "Qist Bazaar — BNPL Fintech App Case Study | Maaz Zindani",
+    "metaDescription": "Qist Bazaar is a buy-now-pay-later fintech app I built from scratch in Flutter — 50,000 installs and 12M GMV within six months of launch.",
+    "keywords": ["BNPL app development", "fintech app developer", "buy now pay later app", "Flutter fintech app", "installment app Pakistan"],
+    "links": { "googlePlay": "https://play.google.com/store/apps/details?id=com.tech.qistbazar" },
+    "operatingSystem": "iOS, Android",
+    "applicationCategory": "FinanceApplication",
+    "tech": ["FLUTTER", "WOOCOMMERCE", "FINTECH"],
+    "metrics": [
+      { "value": "50k", "label": "installs" },
+      { "value": "12M", "label": "GMV in 6 months" },
+      { "value": "0 → 1", "label": "built from scratch" }
+    ],
+    "role": "Senior Flutter Developer",
+    "lead": "Qist Bazaar is a buy-now-pay-later marketplace I built from the ground up — turning an installment-commerce idea into a shipped fintech product with real transaction volume.",
+    "sections": [
+      { "h2": "The challenge", "body": "Bring installment-based shopping to a mass-market audience with a checkout flow simple enough for first-time app users, on a catalog and payment stack that could scale with demand." },
+      { "h2": "What I built", "body": "A Flutter storefront and installment-checkout experience wired to a WooCommerce-backed catalog, with the BNPL flow — plans, approvals, repayments — designed from a blank page." },
+      { "h2": "Outcome", "body": "The app reached 50,000 installs and processed 12M in GMV within six months of launch, standing up as a real fintech platform rather than a prototype." }
+    ],
+    "related": ["shopgo", "ez-estimater", "carservices"]
+  },
+  {
+    "slug": "taxidex",
+    "title": "Taxidex",
+    "category": "Ride-Hailing Platform",
+    "type": "platform",
+    "tagline": "Operator-first taxi & ride-dispatch platform.",
+    "metaTitle": "Taxidex — Taxi & Ride-Dispatch Platform | Maaz Zindani",
+    "metaDescription": "Taxidex is an operator-first taxi and ride-dispatch platform — customer, driver and rental apps in a Flutter monorepo plus a Next.js web operations portal.",
+    "keywords": ["taxi app development", "ride hailing platform", "Flutter monorepo", "dispatch software", "fleet management app"],
+    "links": {},
+    "badge": "Platform",
+    "tech": ["FLUTTER", "MELOS", "NEXT.JS", "TYPESCRIPT"],
+    "metrics": [
+      { "value": "3 apps", "label": "customer · driver · rental" },
+      { "value": "1 portal", "label": "web operations" },
+      { "value": "Monorepo", "label": "shared packages" }
+    ],
+    "role": "Lead Mobile App Developer",
+    "lead": "Taxidex is a taxi solution built by operators, for operators — a full ride-dispatch platform spanning three mobile apps and a web operations portal, engineered as one shared codebase.",
+    "sections": [
+      { "h2": "The build", "body": "Customer, driver, and rental-customer apps live in a single Melos monorepo so shared logic, design system, and networking are written once and reused everywhere. Bookings, drivers, vehicles, and fare-metering are coordinated from a Next.js + TypeScript operations portal." },
+      { "h2": "Why a monorepo", "body": "Three apps that share domain models, auth, and UI benefit hugely from a workspace: one change to a shared package updates every app, analyze and test run across the whole tree, and releases stay in lockstep." },
+      { "h2": "Scope", "body": "Alongside the mobile apps I maintain the back-office web portal for bookings, fleet, customers, and the fare meter — the full operator toolkit rather than just the rider-facing app." }
+    ],
+    "related": ["dispatch-pro", "carservices", "qistlock"]
+  },
+  {
+    "slug": "carservices",
+    "title": "CarServices",
+    "category": "Automotive Super-App",
+    "type": "platform",
+    "tagline": "Automotive super-app across garage, rides, parts & fleet.",
+    "metaTitle": "CarServices — Automotive Super-App | Maaz Zindani",
+    "metaDescription": "CarServices is an automotive super-app spanning garage, courier, rides, a parts marketplace, chauffeur, tow, fleet ops and driver-hire — 280+ backend routes and a Flutter client.",
+    "keywords": ["automotive app development", "super app development", "marketplace app", "Flutter Node.js app", "fleet management platform"],
+    "links": {},
+    "badge": "Platform",
+    "tech": ["FLUTTER", "NODE.JS", "PAYPAL", "REST"],
+    "metrics": [
+      { "value": "280+", "label": "backend routes" },
+      { "value": "235", "label": "Dart files in the client" },
+      { "value": "10+", "label": "service verticals" }
+    ],
+    "role": "Lead Mobile App Developer",
+    "lead": "CarServices is a multi-vertical automotive super-app — a single product that folds garage, courier, rides, a parts marketplace, chauffeur, tow, fleet operations, and a driver-hire job board into one experience.",
+    "sections": [
+      { "h2": "The build", "body": "A 235-file Flutter client wired to a Node.js backend of 280+ routes and 350+ handlers, covering garage and vehicle management, courier booking and tracking, ride receipts, driver earnings and verification, KYC, business reviews, and a parts marketplace." },
+      { "h2": "Payments & subscriptions", "body": "PayPal checkout plus subscription upgrade, renewal, and trial flows are built in, along with the resilience work — safe queries and graceful handling of missing tables — that keeps a large surface stable in production." },
+      { "h2": "Breadth", "body": "Chauffeur booking, tow / roadside, a driver-hire job board, team members, and a become-a-provider path make this less an app and more an operating system for an automotive business." }
+    ],
+    "related": ["taxidex", "dispatch-pro", "workforce"]
+  },
+  {
+    "slug": "nuclear-home-video",
+    "title": "Nuclear Home Video",
+    "category": "Video Streaming",
+    "type": "app",
+    "tagline": "Video-streaming app, 100k+ users at 4.6★.",
+    "metaTitle": "Nuclear Home Video — Streaming App Case Study | Maaz Zindani",
+    "metaDescription": "Nuclear Home Video is a video-streaming app I built from scratch that grew past 100,000 users while holding a 4.6-star rating on Google Play.",
+    "keywords": ["video streaming app development", "OTT app developer", "Android streaming app", "Kotlin video app"],
+    "links": {},
+    "badge": "4.6★ · 100k+ users",
+    "tech": ["KOTLIN", "STREAMING", "ANDROID"],
+    "metrics": [
+      { "value": "100k+", "label": "users" },
+      { "value": "4.6★", "label": "Play Store rating" },
+      { "value": "0 → 1", "label": "built from scratch" }
+    ],
+    "role": "Mobile App Developer",
+    "lead": "Nuclear Home Video is a video-streaming app I built from scratch and grew into a six-figure user base while keeping a rating most streaming apps never reach.",
+    "sections": [
+      { "h2": "What I built", "body": "A native Android streaming client with the playback, catalog, and content experience that a video audience expects — engineered for smooth playback and reliability from day one." },
+      { "h2": "Outcome", "body": "The app passed 100,000 users and has held a 4.6-star rating on Google Play, a signal that the foundations — performance and stability — were right." }
+    ],
+    "related": ["glory", "ohana-africa", "shopgo"]
+  },
+  {
+    "slug": "raheeb",
+    "title": "Raheeb",
+    "category": "Consumer App",
+    "type": "app",
+    "tagline": "Cross-platform consumer app on a .NET + Azure backend.",
+    "metaTitle": "Raheeb — Cross-Platform Consumer App | Maaz Zindani",
+    "metaDescription": "Raheeb is a cross-platform consumer app I delivered on a .NET and Azure backend with AWS media, shipped to both the App Store and Google Play.",
+    "keywords": ["Flutter app developer", "cross platform app development", ".NET mobile backend", "Azure app development"],
+    "links": { "appStore": "https://apps.apple.com/gb/app/raheeb-app/id1645885068" },
+    "operatingSystem": "iOS, Android",
+    "applicationCategory": "LifestyleApplication",
+    "tech": ["FLUTTER", ".NET", "AZURE", "AWS"],
+    "metrics": [
+      { "value": "iOS + Android", "label": "shipped to both stores" },
+      { "value": ".NET", "label": "backend" }
+    ],
+    "role": "Mobile App Developer",
+    "lead": "Raheeb is a cross-platform consumer app shipped to both app stores, built on a .NET and Azure backend with AWS handling media.",
+    "sections": [
+      { "h2": "What I built", "body": "A single Flutter codebase delivering a consistent iOS and Android experience, integrated with a .NET services layer on Azure and AWS-backed media storage." },
+      { "h2": "Approach", "body": "One cross-platform client on a cloud backend keeps the product consistent across devices and cheaper to evolve than two native apps." }
+    ],
+    "related": ["dawlance-air", "glory", "loade-driver"]
+  },
+  {
+    "slug": "dawlance-air",
+    "title": "Dawlance Air",
+    "category": "IoT · Smart Appliance",
+    "type": "app",
+    "tagline": "Smart-appliance control app for Dawlance air conditioners.",
+    "metaTitle": "Dawlance Air — Smart Appliance IoT App | Maaz Zindani",
+    "metaDescription": "Dawlance Air is a smart-appliance control app for Dawlance air conditioners, with IoT pairing and remote control across native and Flutter layers.",
+    "keywords": ["IoT app development", "smart appliance app", "smart home app developer", "Flutter IoT", "connected device app"],
+    "links": { "appStore": "https://apps.apple.com/pk/app/dawlance-air/id1384381512" },
+    "operatingSystem": "iOS, Android",
+    "applicationCategory": "UtilitiesApplication",
+    "tech": ["SWIFT", "FLUTTER", "KOTLIN", "IOT"],
+    "metrics": [
+      { "value": "IoT", "label": "device pairing" },
+      { "value": "Remote", "label": "control" }
+    ],
+    "role": "Senior Flutter Developer",
+    "lead": "Dawlance Air is the companion app for Dawlance smart air conditioners — pair a unit and control it from your phone, wherever you are.",
+    "sections": [
+      { "h2": "What I built", "body": "IoT device pairing and remote-control flows spanning native (Swift / Kotlin) and Flutter layers, so the app talks reliably to the appliance hardware and presents a clean control surface to the user." },
+      { "h2": "Why it matters", "body": "Connected-appliance apps live or die on pairing reliability and control latency — the unglamorous work that makes 'turn on the AC from your phone' actually feel instant." }
+    ],
+    "related": ["raheeb", "qistlock", "dcor"]
+  },
+  {
+    "slug": "qistlock",
+    "title": "QistLock",
+    "category": "Device-Lock SaaS",
+    "type": "platform",
+    "tagline": "Device installment-lock SaaS with an Android kiosk agent.",
+    "metaTitle": "QistLock — Device Installment-Lock SaaS | Maaz Zindani",
+    "metaDescription": "QistLock is a device installment-lock SaaS — a NestJS backend and React dashboard driving an Android Device-Policy-Controller agent that locks financed phones on missed payments.",
+    "keywords": ["device lock SaaS", "EMI phone lock", "Android device policy controller", "NestJS app", "installment financing software"],
+    "links": {},
+    "badge": "Live SaaS",
+    "tech": ["NESTJS", "REACT", "ANDROID DPC", "MYSQL"],
+    "metrics": [
+      { "value": "~10s", "label": "device heartbeat" },
+      { "value": "Kiosk", "label": "full-screen lock" },
+      { "value": "Live", "label": "in production" }
+    ],
+    "role": "Full-Stack Developer",
+    "lead": "QistLock is a SaaS that lets shops finance phones with confidence — a backend and dashboard that can remotely lock a device the moment payments lapse, and clear it the moment they resume.",
+    "sections": [
+      { "h2": "The build", "body": "A NestJS backend (TypeORM, MySQL) and a React operations dashboard drive a native Android agent that becomes the Device Owner. The agent polls a heartbeat every ~10 seconds and, when the shop locks the device from the dashboard, shows a full-screen kiosk lock the user can't dismiss." },
+      { "h2": "How it works", "body": "Devices enroll with a secret, then heartbeat to the backend. Shop staff lock or unlock from the dashboard; the on-device Device-Policy-Controller enforces it and clears the lock as soon as a payment is recorded." },
+      { "h2": "Why it's hard", "body": "Becoming Device Owner, holding a reliable kiosk lock across reboots and network drops, and doing it without draining the battery is genuinely tricky Android systems work — this is running in production." }
+    ],
+    "related": ["dawlance-air", "workforce", "sessionbird"]
+  },
+  {
+    "slug": "spotless-laundry",
+    "title": "Spotless Laundry",
+    "category": "On-Demand Services",
+    "type": "app",
+    "tagline": "On-demand laundry app, 5k daily active users.",
+    "metaTitle": "Spotless Laundry — On-Demand Laundry App | Maaz Zindani",
+    "metaDescription": "Spotless Laundry is an on-demand laundry app with 5,000 daily active users, where 45% of orders came through push campaigns. Built with Flutter, Laravel and Firebase.",
+    "keywords": ["on demand app development", "laundry app developer", "Flutter Laravel app", "service booking app", "push notification marketing"],
+    "links": { "googlePlay": "https://play.google.com/store/apps/details?id=com.spotlessapp.production" },
+    "operatingSystem": "Android",
+    "applicationCategory": "LifestyleApplication",
+    "tech": ["FLUTTER", "LARAVEL", "FIREBASE"],
+    "metrics": [
+      { "value": "5k", "label": "daily active users" },
+      { "value": "45%", "label": "orders via push" }
+    ],
+    "role": "Mobile App Developer",
+    "lead": "Spotless Laundry is an on-demand laundry app where a well-tuned push strategy turned notifications into a genuine ordering channel.",
+    "sections": [
+      { "h2": "What I built", "body": "A Flutter customer app on a Laravel backend with Firebase for real-time updates and messaging — booking, scheduling, and order tracking for on-demand laundry." },
+      { "h2": "Outcome", "body": "The app reached 5,000 daily active users, and push campaigns drove 45% of orders — a reminder that retention and re-engagement are as much product work as acquisition." }
+    ],
+    "related": ["ez-estimater", "ohana-africa", "qist-bazaar"]
+  },
+  {
+    "slug": "shopgo",
+    "title": "ShopGo",
+    "category": "E-Commerce",
+    "type": "app",
+    "tagline": "E-commerce aggregator with a Python scraping engine.",
+    "metaTitle": "ShopGo — E-Commerce Aggregator App | Maaz Zindani",
+    "metaDescription": "ShopGo is an e-commerce aggregator with a Python web-scraping catalog engine that grew 12% month over month for six straight months. Built with Flutter and MySQL.",
+    "keywords": ["e-commerce app development", "web scraping catalog", "Flutter shopping app", "price aggregator app", "Python scraping"],
+    "links": { "googlePlay": "https://play.google.com/store/apps/details?id=co.proglabs.shop_go" },
+    "operatingSystem": "Android",
+    "applicationCategory": "ShoppingApplication",
+    "tech": ["FLUTTER", "PYTHON", "SCRAPING", "MYSQL"],
+    "metrics": [
+      { "value": "12%", "label": "MoM growth" },
+      { "value": "6 months", "label": "sustained" }
+    ],
+    "role": "Mobile App Developer",
+    "lead": "ShopGo is an e-commerce aggregator whose catalog is fed by a Python scraping pipeline — and it compounded 12% growth month over month for half a year.",
+    "sections": [
+      { "h2": "What I built", "body": "A Flutter shopping app backed by MySQL, with a Python + web-scraping engine that keeps the product catalog fresh from external sources automatically." },
+      { "h2": "Outcome", "body": "Sustained 12% month-over-month growth across six straight months — steady compounding rather than a launch spike." }
+    ],
+    "related": ["qist-bazaar", "menulo", "nuclear-home-video"]
+  },
+  {
+    "slug": "loade-driver",
+    "title": "Loade Driver",
+    "category": "Logistics · Driver App",
+    "type": "app",
+    "tagline": "Driver companion app for the Loade delivery platform.",
+    "metaTitle": "Loade Driver — Delivery Driver App | Maaz Zindani",
+    "metaDescription": "Loade Driver is the driver companion app for the Loade delivery platform — live jobs, navigation and earnings on a .NET and Firebase backend.",
+    "keywords": ["delivery driver app", "logistics app development", "Flutter driver app", "last mile delivery app"],
+    "links": { "googlePlay": "https://play.google.com/store/apps/details?id=app.loade.driver" },
+    "operatingSystem": "Android",
+    "applicationCategory": "BusinessApplication",
+    "tech": ["FLUTTER", ".NET", "FIREBASE", "AWS"],
+    "metrics": [
+      { "value": "Live jobs", "label": "real-time" },
+      { "value": "Earnings", "label": "in-app" }
+    ],
+    "role": "Mobile App Developer",
+    "lead": "Loade Driver is the on-the-road half of a delivery platform — live jobs, navigation, and earnings in the hands of the driver.",
+    "sections": [
+      { "h2": "What I built", "body": "A Flutter driver app on a .NET + Firebase backend with AWS infrastructure, surfacing live jobs, routing, and earnings so drivers can work without friction." },
+      { "h2": "Approach", "body": "Driver apps have to stay responsive on patchy connections and modest phones — the real work is reliability under real-world conditions." }
+    ],
+    "related": ["dispatch-pro", "raheeb", "taxidex"]
+  },
+  {
+    "slug": "dcor",
+    "title": "DCOR",
+    "category": "Enterprise · Field Data",
+    "type": "platform",
+    "tagline": "Offline-first field data-collection & verification app.",
+    "metaTitle": "DCOR — Offline-First Field Data App | Maaz Zindani",
+    "metaDescription": "DCOR is an enterprise offline-first field data-collection and verification app — role-based access, GPS attendance, a dynamic form engine and five-language RTL support.",
+    "keywords": ["offline first app", "field data collection app", "enterprise Flutter app", "BLoC architecture", "survey app development"],
+    "links": {},
+    "badge": "Forteve",
+    "tech": ["FLUTTER", "BLOC", "HIVE", "OFFLINE-FIRST"],
+    "metrics": [
+      { "value": "3 roles", "label": "BA · BC · Supervisor" },
+      { "value": "5 langs", "label": "with RTL" },
+      { "value": "Offline", "label": "queue + sync" }
+    ],
+    "role": "Lead Mobile App Developer",
+    "lead": "DCOR is an enterprise field app for teams that collect and verify consumer data door to door — and it has to work with no signal, then sync cleanly when a connection returns.",
+    "sections": [
+      { "h2": "The build", "body": "A feature-first Flutter app using BLoC/Cubit for state, get_it for dependency injection, and Hive as an offline queue. Field teams mark GPS-based attendance, fill dynamic multi-step survey forms, and sync records once they're back online." },
+      { "h2": "Roles & workflow", "body": "Three roles — Brand Ambassador (collector), Back Checker (verifier), and Supervisor — each get a tailored workflow, from data entry to re-checking records to overseeing team performance." },
+      { "h2": "Details that matter", "body": "A dynamic form engine renders surveys from config, media capture (camera, audio, video) is compressed on device, and the UI ships in English, Urdu, Sindhi, Pashto and Punjabi with full RTL support." }
+    ],
+    "related": ["workforce", "qistlock", "sessionbird"]
+  },
+  {
+    "slug": "ez-estimater",
+    "title": "EZ Estimater",
+    "category": "Construction · B2B",
+    "type": "app",
+    "tagline": "Construction cost-estimation app for contractors.",
+    "metaTitle": "EZ Estimater — Construction Estimation App | Maaz Zindani",
+    "metaDescription": "EZ Estimater is a construction cost-estimation app for contractors — quoting and job tracking on a Laravel and Firebase stack, built with Flutter.",
+    "keywords": ["construction app development", "estimation app", "contractor app", "Flutter Laravel app", "B2B mobile app"],
+    "links": { "googlePlay": "https://play.google.com/store/apps/details?id=com.probuilds.ezestimater" },
+    "operatingSystem": "Android",
+    "applicationCategory": "BusinessApplication",
+    "tech": ["LARAVEL", "FLUTTER", "FIREBASE"],
+    "metrics": [
+      { "value": "Quoting", "label": "on site" },
+      { "value": "Job tracking", "label": "built in" }
+    ],
+    "role": "Senior Flutter Developer",
+    "lead": "EZ Estimater puts construction quoting and job tracking in a contractor's pocket, so estimates happen on site instead of back at the office.",
+    "sections": [
+      { "h2": "What I built", "body": "A Flutter app on a Laravel + Firebase stack for building estimates, managing quotes, and tracking jobs — tuned for the workflows contractors actually use in the field." }
+    ],
+    "related": ["carservices", "spotless-laundry", "qist-bazaar"]
+  },
+  {
+    "slug": "glory",
+    "title": "Glory",
+    "category": "Lifestyle · Devotional",
+    "type": "app",
+    "tagline": "Devotional prayer & daily-inspiration app.",
+    "metaTitle": "Glory — Devotional Prayer App | Maaz Zindani",
+    "metaDescription": "Glory is a devotional prayer and daily-inspiration app with a clean, content-first Flutter experience, published on the App Store.",
+    "keywords": ["Flutter app developer", "content app development", "lifestyle app", "prayer app", "iOS app developer"],
+    "links": { "appStore": "https://apps.apple.com/pk/app/glory-devotional-prayer/id6746167083" },
+    "operatingSystem": "iOS",
+    "applicationCategory": "LifestyleApplication",
+    "tech": ["FLUTTER", "FIREBASE"],
+    "metrics": [
+      { "value": "Content-first", "label": "reading experience" }
+    ],
+    "role": "Mobile App Developer",
+    "lead": "Glory is a devotional and daily-inspiration app built around a calm, content-first reading experience.",
+    "sections": [
+      { "h2": "What I built", "body": "A Flutter app with a Firebase backend focused on typography, readability, and a distraction-free flow — the details that make a content app feel considered rather than templated." }
+    ],
+    "related": ["nuclear-home-video", "raheeb", "ohana-africa"]
+  },
+  {
+    "slug": "ohana-africa",
+    "title": "Ohana Africa",
+    "category": "Consumer App",
+    "type": "app",
+    "tagline": "Consumer services app for the African market.",
+    "metaTitle": "Ohana Africa — Consumer Services App | Maaz Zindani",
+    "metaDescription": "Ohana Africa is a consumer services app for the African market, built with Flutter and a Firebase real-time backend, published on Google Play.",
+    "keywords": ["Flutter app developer", "consumer app development", "Firebase app", "cross platform app Africa"],
+    "links": { "googlePlay": "https://play.google.com/store/apps/details?id=com.ohana.africa" },
+    "operatingSystem": "Android",
+    "applicationCategory": "LifestyleApplication",
+    "tech": ["FLUTTER", "FIREBASE"],
+    "metrics": [
+      { "value": "Firebase", "label": "real-time backend" }
+    ],
+    "role": "Mobile App Developer",
+    "lead": "Ohana Africa is a consumer services app built for the African market on Flutter and Firebase.",
+    "sections": [
+      { "h2": "What I built", "body": "A cross-platform Flutter client on a Firebase real-time backend, delivering a consistent consumer experience with live data and cloud storage." }
+    ],
+    "related": ["spotless-laundry", "glory", "nuclear-home-video"]
+  },
+  {
+    "slug": "sessionbird",
+    "title": "SessionBird",
+    "category": "SaaS · Customer Engagement",
+    "type": "platform",
+    "tagline": "Omnichannel customer-engagement SaaS.",
+    "metaTitle": "SessionBird — Customer Engagement SaaS | Maaz Zindani",
+    "metaDescription": "SessionBird is an omnichannel customer-engagement SaaS — campaigns, chatbot, contacts, tickets, automation and analytics under one Flutter app.",
+    "keywords": ["CRM app development", "customer engagement platform", "marketing automation app", "Flutter SaaS", "chatbot app"],
+    "links": {},
+    "badge": "SaaS",
+    "tech": ["FLUTTER", "AUTOMATION", "ANALYTICS"],
+    "metrics": [
+      { "value": "Omnichannel", "label": "one inbox" },
+      { "value": "Automation", "label": "campaigns + bots" }
+    ],
+    "role": "Lead Mobile App Developer",
+    "lead": "SessionBird is an omnichannel customer-engagement platform — the campaigns, chatbot, tickets, and analytics a business needs to talk to its customers, in one app.",
+    "sections": [
+      { "h2": "The build", "body": "A Flutter application bringing together campaigns, a chatbot, contacts, support tickets, automation, and analytics — a full engagement suite rather than a single-purpose tool." },
+      { "h2": "Why it's ambitious", "body": "Pulling messaging, automation, and reporting into one coherent product means designing for many workflows without the app feeling heavy — an exercise in structure and state management." }
+    ],
+    "related": ["qistlock", "dcor", "workforce"]
+  },
+  {
+    "slug": "workforce",
+    "title": "Workforce",
+    "category": "Attendance Platform",
+    "type": "platform",
+    "tagline": "Workforce attendance-management suite.",
+    "metaTitle": "Workforce — Attendance Management Suite | Maaz Zindani",
+    "metaDescription": "Workforce is a workforce attendance-management suite — a field app, an admin console and a self-hosted push and reconciliation server on the Firebase Admin SDK.",
+    "keywords": ["attendance app development", "workforce management app", "Flutter admin app", "Node.js Firebase server", "employee tracking app"],
+    "links": {},
+    "badge": "Platform",
+    "tech": ["FLUTTER", "NODE.JS", "FIREBASE"],
+    "metrics": [
+      { "value": "2 apps", "label": "field + admin" },
+      { "value": "Self-hosted", "label": "push + cron" }
+    ],
+    "role": "Lead Mobile App Developer",
+    "lead": "Workforce is an attendance-management suite — a field app for employees, an admin console for managers, and a server that ties them together without a cloud-functions bill.",
+    "sections": [
+      { "h2": "The build", "body": "A Flutter field app and a Flutter admin console backed by a self-hosted Node.js / Express server that uses the Firebase Admin SDK for push notifications and runs reconciliation on a cron — no Blaze plan or Cloud Functions required." },
+      { "h2": "Why self-hosted", "body": "Running push and reconciliation on a VPS with the Admin SDK keeps costs predictable and the whole system under one roof — a pragmatic choice for a business tool." }
+    ],
+    "related": ["dcor", "carservices", "qistlock"]
+  },
+  {
+    "slug": "taskvare",
+    "title": "Taskvare",
+    "category": "Productivity",
+    "type": "web",
+    "tagline": "Task & project-management suite, web + mobile.",
+    "metaTitle": "Taskvare — Task & Project Management Suite | Maaz Zindani",
+    "metaDescription": "Taskvare is a task and project-management suite — a React web app and a Flutter mobile client sharing one TypeScript stack.",
+    "keywords": ["project management app", "task management software", "React TypeScript app", "Flutter web mobile", "productivity app development"],
+    "links": { "live": "https://taskvare.com" },
+    "tech": ["TYPESCRIPT", "REACT", "FLUTTER"],
+    "metrics": [
+      { "value": "Web + mobile", "label": "one stack" },
+      { "value": "TypeScript", "label": "end to end" }
+    ],
+    "role": "Full-Stack Developer",
+    "lead": "Taskvare is a task and project-management suite that meets people where they work — a React web app and a Flutter mobile client on a shared TypeScript foundation.",
+    "sections": [
+      { "h2": "The build", "body": "React on the web, Flutter on mobile, and a shared TypeScript stack underneath — the same product, native to whichever surface the user is on." }
+    ],
+    "related": ["sessionbird", "workforce", "menulo"]
+  },
+  {
+    "slug": "menulo",
+    "title": "Menulo",
+    "category": "Web · Discovery",
+    "type": "web",
+    "tagline": "Restaurant discovery & menu platform (Germany).",
+    "metaTitle": "Menulo — Restaurant Menu Platform | Maaz Zindani",
+    "metaDescription": "Menulo is a restaurant discovery and menu platform in Germany, with a Python and BeautifulSoup ingestion pipeline that keeps listings fresh.",
+    "keywords": ["web development", "restaurant platform", "Python web scraping", "BeautifulSoup", "menu aggregator"],
+    "links": { "live": "https://www.menulo.de" },
+    "tech": ["PYTHON", "BEAUTIFULSOUP", "WEB"],
+    "metrics": [
+      { "value": "Germany", "label": "live market" },
+      { "value": "Ingestion", "label": "automated" }
+    ],
+    "role": "Developer",
+    "lead": "Menulo is a restaurant discovery and menu platform serving Germany, kept current by an automated ingestion pipeline.",
+    "sections": [
+      { "h2": "What I built", "body": "A Python + BeautifulSoup pipeline that ingests and structures restaurant and menu data, feeding a discovery platform so listings stay fresh without manual entry." }
+    ],
+    "related": ["shopgo", "taskvare", "qwickdraw"]
+  },
+  {
+    "slug": "qwickdraw",
+    "title": "QwickDraw",
+    "category": "Realtime · Gaming",
+    "type": "platform",
+    "tagline": "Live prize-draw game platform. Play. Win. Anywhere.",
+    "metaTitle": "QwickDraw — Live Prize-Draw Game | Maaz Zindani",
+    "metaDescription": "QwickDraw is a live prize-draw game platform where hosts run real-time events and participants join from anywhere and win. Built with Flutter and BLoC.",
+    "keywords": ["realtime app development", "game app developer", "live event app", "Flutter BLoC app", "prize draw platform"],
+    "links": {},
+    "badge": "Realtime",
+    "tech": ["FLUTTER", "BLOC", "REALTIME"],
+    "metrics": [
+      { "value": "Hosts", "label": "run live events" },
+      { "value": "Realtime", "label": "join & win" }
+    ],
+    "role": "Lead Mobile App Developer",
+    "lead": "QwickDraw is a live prize-draw platform — hosts run real-time events, participants join from anywhere, and prizes go out live. Play. Win. Anywhere.",
+    "sections": [
+      { "h2": "The build", "body": "A Flutter app with BLoC state management spanning host, participant, event, prize, and messaging flows — the moving parts of a live, interactive draw where timing and state have to stay in sync for everyone at once." },
+      { "h2": "Why realtime is the hard part", "body": "A live event app is only as good as its synchronization: every participant has to see the same state at the same moment, which is where the real engineering goes." }
+    ],
+    "related": ["menulo", "sessionbird", "nuclear-home-video"]
+  },
+  {
+    "slug": "dhero",
+    "title": "Dhero",
+    "category": "Mobile App",
+    "type": "app",
+    "tagline": "Cross-platform mobile app on a .NET + Firebase backend.",
+    "metaTitle": "Dhero — Cross-Platform Mobile App | Maaz Zindani",
+    "metaDescription": "Dhero is a cross-platform mobile app delivered on a .NET and Firebase backend, built with Flutter and shipped for iOS.",
+    "keywords": ["Flutter app developer", "cross platform mobile app", ".NET Firebase app", "iOS app development"],
+    "links": {},
+    "badge": "Mobile",
+    "tech": ["FLUTTER", ".NET", "FIREBASE"],
+    "metrics": [
+      { "value": "Flutter", "label": "cross-platform" }
+    ],
+    "role": "Mobile App Developer",
+    "lead": "Dhero is a cross-platform mobile app built in Flutter on a .NET and Firebase backend.",
+    "sections": [
+      { "h2": "What I built", "body": "A Flutter client integrated with a .NET services layer and Firebase, delivering a cross-platform experience from a single codebase." }
+    ],
+    "related": ["raheeb", "loade-driver", "glory"]
+  }
+]

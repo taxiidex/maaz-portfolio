@@ -1,0 +1,122 @@
+[
+  {
+    "slug": "flutter-app-development",
+    "title": "Flutter App Development",
+    "h1": "Flutter App Development",
+    "metaTitle": "Flutter App Development Services | Maaz Zindani",
+    "metaDescription": "Meta-certified Flutter developer building cross-platform iOS and Android apps from one codebase — production-grade, fast, and scaled to 100k+ users.",
+    "keywords": ["flutter app development", "flutter developer", "cross platform app development", "hire flutter developer", "ios and android app one codebase"],
+    "intro": "I build cross-platform apps in Flutter — one codebase that ships a native-feeling experience to both iOS and Android. Over six years and 15+ shipped apps, I've taken Flutter products from a blank repo to the stores and up to 100k+ users.",
+    "sections": [
+      { "h2": "What you get", "body": "A single Flutter codebase delivering polished iOS and Android apps, clean state management (BLoC / Cubit or Riverpod), a real backend, CI/CD, and store submission handled end to end." },
+      { "h2": "Why Flutter", "body": "One team, one codebase, two platforms — Flutter cuts the cost and time of maintaining separate native apps while keeping 60fps performance and a native look. It's the right default for most product teams shipping to both stores." },
+      { "h2": "Proof", "body": "Dispatch Pro (logistics super-app, 2,500 drivers in 60 days), Qist Bazaar (BNPL, 50k installs), and Nuclear Home Video (100k+ users at 4.6★) are all Flutter or native builds I shipped and scaled." }
+    ],
+    "faq": [
+      { "q": "How long does a Flutter app take to build?", "a": "A focused MVP is typically around 90 days from idea to app store. Larger platforms scale from there, delivered on a two-week sprint cadence." },
+      { "q": "Can Flutter handle complex, high-scale apps?", "a": "Yes. I've shipped Flutter apps handling real-time logistics, fintech transactions, and 100k+ users. With the right architecture Flutter scales comfortably." },
+      { "q": "Do you build the backend too?", "a": "Yes — I deliver end to end: Flutter frontend plus Laravel / Spring Boot / Node backends, AWS infrastructure, and CI/CD pipelines." }
+    ],
+    "relatedProjects": ["dispatch-pro", "qist-bazaar", "dawlance-air"]
+  },
+  {
+    "slug": "mvp-development",
+    "title": "MVP Development for Startups",
+    "h1": "MVP Development for Startups",
+    "metaTitle": "Startup MVP Development in 90 Days | Maaz Zindani",
+    "metaDescription": "Idea to app store in about 90 days — Flutter-first MVPs on production-grade backends, built so you can raise, launch, and scale without a rebuild.",
+    "keywords": ["mvp development", "startup app development", "build an mvp", "minimum viable product app", "90 day mvp", "startup mobile app developer"],
+    "intro": "I help founders go from idea to a real, in-store MVP in roughly 90 days — built on foundations solid enough to scale, so your first version doesn't become a throwaway.",
+    "sections": [
+      { "h2": "The 90-day path", "body": "Discovery and scoping, a Flutter-first build on a production-grade backend, and store launch — delivered in two-week sprints so you see working software every fortnight, not at the end." },
+      { "h2": "Built to scale, not to throw away", "body": "Too many MVPs get rebuilt the moment they get traction. I architect yours with clean state management, a real backend, and CI/CD from day one, so growth means adding features — not starting over." },
+      { "h2": "Proof", "body": "Qist Bazaar went from zero to 50k installs and 12M GMV in six months. Dispatch Pro shipped v1 in nine weeks and onboarded thousands of users. That's the MVP-to-scale path in practice." }
+    ],
+    "faq": [
+      { "q": "How fast can we start?", "a": "Discovery call within 48 hours, and a kickoff typically inside two weeks." },
+      { "q": "What does an MVP cost?", "a": "It depends on scope, but I work in fixed sprints so cost is predictable — we scope the smallest version that proves the idea and build from there." },
+      { "q": "Do you work with non-technical founders?", "a": "Absolutely. I own the technical side end to end — product architecture, mobile, backend, and release — so you can focus on customers." }
+    ],
+    "relatedProjects": ["qist-bazaar", "dispatch-pro", "taxidex"]
+  },
+  {
+    "slug": "mobile-app-developer-karachi",
+    "title": "Mobile App Developer in Karachi",
+    "h1": "Mobile App Developer in Karachi",
+    "metaTitle": "Mobile App Developer in Karachi, Pakistan | Maaz Zindani",
+    "metaDescription": "Karachi-based, Meta-certified mobile app developer and Flutter expert — building iOS and Android apps for clients in Pakistan and worldwide, async-friendly across timezones.",
+    "keywords": ["mobile app developer karachi", "app developer pakistan", "flutter developer karachi", "hire app developer pakistan", "android ios developer karachi"],
+    "intro": "I'm a Karachi-based, Meta-certified mobile app developer and Flutter expert. I build for clients across Pakistan and worldwide — same craft, timezone-friendly collaboration, and a track record of apps that reach 100k+ users.",
+    "sections": [
+      { "h2": "Local roots, global work", "body": "Based in Karachi, I lead mobile builds for founders and companies far beyond Pakistan — shipping worldwide and working async across timezones. I studied Artificial Intelligence at SZABIST and have spent six years shipping products people actually use." },
+      { "h2": "What I build", "body": "Cross-platform Flutter and native Android/iOS apps, with the backend and DevOps behind them — logistics, fintech, IoT, e-commerce, and enterprise tools." },
+      { "h2": "Why work with a Karachi developer", "body": "You get senior, Meta-certified engineering and full end-to-end ownership at a rate that's competitive globally — plus a portfolio of shipped, scaled apps to back it up." }
+    ],
+    "faq": [
+      { "q": "Do you work with international clients?", "a": "Yes — based in Karachi, Pakistan, I ship worldwide and stay async-friendly across timezones." },
+      { "q": "Are you available for on-site work in Karachi?", "a": "I work primarily remote but am based in Karachi and open to discussing on-site collaboration for local projects." },
+      { "q": "What kinds of apps do you build?", "a": "Mobile apps across logistics, fintech, IoT, e-commerce, streaming and enterprise — Flutter and native, with the backend and DevOps included." }
+    ],
+    "relatedProjects": ["dispatch-pro", "qist-bazaar", "carservices"]
+  },
+  {
+    "slug": "backend-devops",
+    "title": "Backend & DevOps",
+    "h1": "Backend & DevOps",
+    "metaTitle": "Backend & DevOps Engineering | Maaz Zindani",
+    "metaDescription": "Production backends and DevOps pipelines behind your app — Laravel, Spring Boot and Node on AWS with Docker, Kubernetes and CI/CD for zero-downtime releases.",
+    "keywords": ["backend development", "devops engineer", "aws deployment", "ci cd pipeline", "laravel developer", "docker kubernetes"],
+    "intro": "An app is only as good as what's behind it. I build the production backends and DevOps pipelines that keep mobile products fast, reliable, and cheap to run at scale.",
+    "sections": [
+      { "h2": "Backends that hold up", "body": "Laravel, Spring Boot, and Node.js APIs designed for real traffic — clean data models, safe queries, and resilience against the messy edge cases that only show up in production." },
+      { "h2": "DevOps & zero-downtime releases", "body": "AWS infrastructure with Docker and Kubernetes pipelines, CI/CD via GitHub Actions and fastlane, and release cadences measured in days — with zero downtime and a 99.9% uptime line held in production." },
+      { "h2": "Proof", "body": "Dispatch Pro runs on a Spring Boot + Kafka pipeline on AWS with releases every few days. QistLock is a NestJS SaaS running live. I've kept fleets of apps at 99.9% uptime." }
+    ],
+    "faq": [
+      { "q": "Can you take over an existing backend?", "a": "Yes — I regularly inherit codebases, stabilise them, and add CI/CD and monitoring so releases stop being scary." },
+      { "q": "Which cloud do you use?", "a": "Primarily AWS, with Docker and Kubernetes. I also work with Firebase and self-hosted VPS setups where they fit the budget better." },
+      { "q": "Do you set up CI/CD?", "a": "Yes — GitHub Actions, fastlane, and containerised pipelines for zero-downtime deploys are a standard part of what I deliver." }
+    ],
+    "relatedProjects": ["dispatch-pro", "qistlock", "carservices"]
+  },
+  {
+    "slug": "ai-integration",
+    "title": "AI Integration for Apps",
+    "h1": "AI Integration for Apps",
+    "metaTitle": "AI Integration for Mobile Apps | Maaz Zindani",
+    "metaDescription": "Add real AI to your product — LLM features, RAG pipelines and automation embedded into mobile and web apps by a developer who ships production software.",
+    "keywords": ["ai integration", "llm integration", "rag pipeline", "ai app development", "chatbot development", "ai automation"],
+    "intro": "I integrate AI into products in ways that actually ship — LLM features, retrieval-augmented generation, and automation embedded into real mobile and web apps, not demos.",
+    "sections": [
+      { "h2": "What I add", "body": "LLM-powered features (chat, summarisation, extraction), RAG pipelines that ground answers in your own data, and automation that removes manual steps — wired into your app with the reliability and cost control production demands." },
+      { "h2": "Grounded, not gimmicky", "body": "AI features fail when they hallucinate or cost too much. I design retrieval, guardrails, and caching so the AI is accurate, fast, and affordable at scale — with a fallback path when the model is uncertain." },
+      { "h2": "Background", "body": "I hold Google AI Essentials and IBM's Exploratory Data Analysis for Machine Learning, and I studied Artificial Intelligence at university — so the AI work rests on real fundamentals." }
+    ],
+    "faq": [
+      { "q": "Which AI models do you work with?", "a": "I default to the latest and most capable models for the task, and design the integration so you can swap providers without a rewrite." },
+      { "q": "Can you add AI to my existing app?", "a": "Yes — AI features can be layered onto an existing Flutter or web app, from a chat assistant to a RAG-powered search over your content." },
+      { "q": "How do you keep AI costs under control?", "a": "With caching, retrieval to keep prompts small, and model selection tuned per task — so quality stays high without a runaway bill." }
+    ],
+    "relatedProjects": ["sessionbird", "qwickdraw", "shopgo"]
+  },
+  {
+    "slug": "app-modernization",
+    "title": "App Modernization & Migration",
+    "h1": "App Modernization & Migration",
+    "metaTitle": "App Modernization & Migration to Flutter | Maaz Zindani",
+    "metaDescription": "Migrate legacy native apps to a unified Flutter architecture with zero downtime — one modern codebase, faster releases, and lower maintenance cost.",
+    "keywords": ["app modernization", "legacy app migration", "native to flutter migration", "app rewrite", "codebase migration", "app refactoring"],
+    "intro": "If you're maintaining two aging native apps — or one that's grown brittle — I migrate them to a single, modern Flutter architecture, without stopping your releases.",
+    "sections": [
+      { "h2": "From legacy to unified", "body": "Separate iOS and Android codebases mean double the work and drift between platforms. I consolidate them into one Flutter codebase with clean architecture, so features ship once and behave the same everywhere." },
+      { "h2": "Zero-downtime migration", "body": "Migrations are done incrementally — feature by feature, with the old and new coexisting where needed — so users never see a broken release and the business keeps shipping throughout." },
+      { "h2": "Proof", "body": "I've repaired and modernised large codebases — including a 235-file client with hundreds of broken imports brought back to zero unresolved — and kept fleets of apps at 99.9% uptime through the transition." }
+    ],
+    "faq": [
+      { "q": "Do we have to stop releasing during a migration?", "a": "No. I migrate incrementally so you keep shipping. The old and new can run side by side until the switch is safe." },
+      { "q": "Why migrate to Flutter?", "a": "One codebase instead of two means faster features, consistent behaviour across platforms, and materially lower maintenance cost." },
+      { "q": "Can you rescue a stalled or broken codebase?", "a": "Yes — stabilising inherited, broken, or half-finished codebases and getting them shipping again is a large part of what I do." }
+    ],
+    "relatedProjects": ["carservices", "dcor", "taxidex"]
+  }
+]

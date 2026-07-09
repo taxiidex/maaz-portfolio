@@ -570,6 +570,7 @@ em { font-style: normal; color: var(--emerald); }
   transition: background 0.4s, transform 0.4s cubic-bezier(0.76, 0, 0.24, 1);
 }
 .cert-card:hover { background: var(--ink-soft); transform: translateY(-6px); }
+.cert-a { display: flex; flex-direction: column; height: 100%; }
 .cert-issuer {
   font-size: 11px; letter-spacing: 0.32em;
   color: var(--emerald);
@@ -581,6 +582,13 @@ em { font-style: normal; color: var(--emerald); }
   line-height: 1.1; text-transform: uppercase;
   color: var(--cream);
 }
+.cert-verify {
+  margin-top: auto; padding-top: 20px;
+  font-size: 10px; letter-spacing: 0.26em;
+  color: var(--cream-dim);
+  transition: color 0.35s;
+}
+.cert-card:hover .cert-verify { color: var(--emerald); }
 
 /* ---------------- webgl layers ---------------- */
 #hero-particles {
@@ -822,6 +830,17 @@ em { font-style: normal; color: var(--emerald); }
   padding: 5px 11px;
 }
 .proj-card:hover .proj-tags li { border-color: rgba(16, 185, 129, 0.28); }
+.proj-title a { transition: color 0.3s; }
+.proj-card:hover .proj-title a { color: var(--emerald); }
+.proj-case {
+  margin-top: 18px; align-self: flex-start;
+  font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--cream-dim);
+  border-bottom: 1px solid var(--cream-faint);
+  padding-bottom: 3px;
+  transition: color 0.3s, border-color 0.3s;
+}
+.proj-card:hover .proj-case { color: var(--emerald); border-color: var(--emerald-dim); }
 @media (max-width: 640px) {
   .archive-grid { grid-template-columns: 1fr; }
 }

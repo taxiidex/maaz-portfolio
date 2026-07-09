@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QistLock — Device Installment-Lock SaaS | Maaz Zindani</title>
+  <meta name="description" content="QistLock is a device installment-lock SaaS — a NestJS backend and React dashboard driving an Android Device-Policy-Controller agent that locks financed phones on missed payments." />
+  <link rel="canonical" href="https://www.maazzindani.com/projects/qistlock/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="author" content="Maaz Zindani" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Maaz Zindani" />
+  <meta property="og:title" content="QistLock — Device Installment-Lock SaaS | Maaz Zindani" />
+  <meta property="og:description" content="QistLock is a device installment-lock SaaS — a NestJS backend and React dashboard driving an Android Device-Policy-Controller agent that locks financed phones on missed payments." />
+  <meta property="og:url" content="https://www.maazzindani.com/projects/qistlock/" />
+  <meta property="og:image" content="https://www.maazzindani.com/assets/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="QistLock — Device Installment-Lock SaaS | Maaz Zindani" />
+  <meta name="twitter:description" content="QistLock is a device installment-lock SaaS — a NestJS backend and React dashboard driving an Android Device-Policy-Controller agent that locks financed phones on missed payments." />
+  <meta name="twitter:image" content="https://www.maazzindani.com/assets/og.jpg" />
+  <meta name="theme-color" content="#0a0a0a" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="preload" href="/fonts/anton-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/css/pages.css?v=1" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "QistLock",
+  "description": "QistLock is a device installment-lock SaaS — a NestJS backend and React dashboard driving an Android Device-Policy-Controller agent that locks financed phones on missed payments.",
+  "url": "https://www.maazzindani.com/projects/qistlock/",
+  "author": {
+    "@id": "https://www.maazzindani.com/#maaz"
+  },
+  "keywords": "device lock SaaS, EMI phone lock, Android device policy controller, NestJS app, installment financing software"
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.maazzindani.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Projects",
+      "item": "https://www.maazzindani.com/projects/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "QistLock",
+      "item": "https://www.maazzindani.com/projects/qistlock/"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <header class="site-nav"><div class="site-nav-inner">
+    <a class="nav-brand" href="/">MZ<span>&copy;</span></a>
+    <nav class="nav-links" aria-label="Primary"><a href="/projects/">Projects</a><a href="/services/">Services</a><a href="/about/">About</a><a href="/#contact">Contact</a></nav>
+  </div></header>
+  <main>
+<nav class="crumbs wrap" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/projects/">Projects</a></li><li>QistLock</li></ol></nav>
+    <section class="page-hero"><div class="wrap">
+      <p class="eyebrow">Device-Lock SaaS</p>
+      <h1>QistLock</h1>
+      <p class="page-lead">QistLock is a SaaS that lets shops finance phones with confidence — a backend and dashboard that can remotely lock a device the moment payments lapse, and clear it the moment they resume.</p>
+      <div class="hero-meta"><span class="pill accent">Full-Stack Developer</span><span class="pill">Live SaaS</span><span class="pill">Device-Lock SaaS</span></div>
+      
+    </div></section>
+    <section class="metrics wrap" aria-label="Key results"><div class="metric">
+      <p class="m-value"><span>~10s</span></p>
+      <p class="m-label">device heartbeat</p>
+    </div><div class="metric">
+      <p class="m-value"><span>Kiosk</span></p>
+      <p class="m-label">full-screen lock</p>
+    </div><div class="metric">
+      <p class="m-value"><span>Live</span></p>
+      <p class="m-label">in production</p>
+    </div></section>
+    <section class="content"><div class="wrap">
+      <section><h2>The build</h2><p>A NestJS backend (TypeORM, MySQL) and a React operations dashboard drive a native Android agent that becomes the Device Owner. The agent polls a heartbeat every ~10 seconds and, when the shop locks the device from the dashboard, shows a full-screen kiosk lock the user can&#39;t dismiss.</p></section>
+<section><h2>How it works</h2><p>Devices enroll with a secret, then heartbeat to the backend. Shop staff lock or unlock from the dashboard; the on-device Device-Policy-Controller enforces it and clears the lock as soon as a payment is recorded.</p></section>
+<section><h2>Why it&#39;s hard</h2><p>Becoming Device Owner, holding a reliable kiosk lock across reboots and network drops, and doing it without draining the battery is genuinely tricky Android systems work — this is running in production.</p></section>
+      <section><h2>Tech</h2><ul class="tech-tags"><li>NESTJS</li><li>REACT</li><li>ANDROID DPC</li><li>MYSQL</li></ul></section>
+    </div></section>
+    <section class="related"><div class="wrap">
+    <div class="section-head"><h2>Related work</h2></div>
+    <ul class="card-grid"><li class="card">
+      <span class="c-eyebrow">IoT · Smart Appliance</span>
+      <h3><a href="/projects/dawlance-air/">Dawlance Air</a></h3>
+      <p>Smart-appliance control app for Dawlance air conditioners.</p>
+      <span class="c-go">Case study &#8594;</span>
+    </li><li class="card">
+      <span class="c-eyebrow">Attendance Platform</span>
+      <h3><a href="/projects/workforce/">Workforce</a></h3>
+      <p>Workforce attendance-management suite.</p>
+      <span class="c-go">Case study &#8594;</span>
+    </li><li class="card">
+      <span class="c-eyebrow">SaaS · Customer Engagement</span>
+      <h3><a href="/projects/sessionbird/">SessionBird</a></h3>
+      <p>Omnichannel customer-engagement SaaS.</p>
+      <span class="c-go">Case study &#8594;</span>
+    </li></ul>
+  </div></section>
+    <section class="cta"><div class="wrap">
+    <h2>Building something like QistLock?</h2>
+    <p>Tell me about your product — discovery call within 48 hours.</p>
+    <div class="btn-row">
+      <a class="btn" href="/#contact">Start a project</a>
+      <a class="btn ghost" href="mailto:maazzindani2003@gmail.com">Email me &#8599;</a>
+    </div>
+  </div></section>
+  </main>
+  <footer class="site-foot"><div class="site-foot-inner">
+    <div class="foot-links">
+      <a href="/">Home</a>
+      <a href="/projects/">Projects</a>
+      <a href="/services/">Services</a>
+      <a href="/about/">About</a>
+      <a href="https://github.com/muhammedmuaz" target="_blank" rel="noopener">GitHub &#8599;</a>
+      <a href="https://www.linkedin.com/in/maazzindani/" target="_blank" rel="noopener">LinkedIn &#8599;</a>
+      <a href="mailto:maazzindani2003@gmail.com">Email &#8599;</a>
+    </div>
+    <p class="foot-copy">&copy; 2026 Maaz Zindani &mdash; Karachi, Pakistan</p>
+  </div></footer>
+</body>
+</html>

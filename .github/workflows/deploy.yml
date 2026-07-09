@@ -15,6 +15,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Generate SEO pages (projects, services, about, sitemap)
+        run: node build/generate.mjs
+
       - name: Setup SSH
         run: |
           mkdir -p ~/.ssh
@@ -26,6 +34,7 @@ jobs:
         run: |
           rsync -az --delete \
             --exclude='.git/' --exclude='.github/' --exclude='.claude/' --exclude='.DS_Store' \
+            --exclude='build/' --exclude='data/' \
             -e "ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no" \
             ./ ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:/www/wwwroot/maazzindani.com/
 

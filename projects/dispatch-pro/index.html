@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dispatch Pro — Logistics Super-App Case Study | Maaz Zindani</title>
+  <meta name="description" content="How I built Dispatch Pro, a real-time logistics and ride-dispatch super-app that onboarded 2,500 drivers and 12,000 riders in 60 days on a Kafka-backed live pipeline." />
+  <link rel="canonical" href="https://www.maazzindani.com/projects/dispatch-pro/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="author" content="Maaz Zindani" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Maaz Zindani" />
+  <meta property="og:title" content="Dispatch Pro — Logistics Super-App Case Study | Maaz Zindani" />
+  <meta property="og:description" content="How I built Dispatch Pro, a real-time logistics and ride-dispatch super-app that onboarded 2,500 drivers and 12,000 riders in 60 days on a Kafka-backed live pipeline." />
+  <meta property="og:url" content="https://www.maazzindani.com/projects/dispatch-pro/" />
+  <meta property="og:image" content="https://www.maazzindani.com/assets/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Dispatch Pro — Logistics Super-App Case Study | Maaz Zindani" />
+  <meta name="twitter:description" content="How I built Dispatch Pro, a real-time logistics and ride-dispatch super-app that onboarded 2,500 drivers and 12,000 riders in 60 days on a Kafka-backed live pipeline." />
+  <meta name="twitter:image" content="https://www.maazzindani.com/assets/og.jpg" />
+  <meta name="theme-color" content="#0a0a0a" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="preload" href="/fonts/anton-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/css/pages.css?v=1" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Dispatch Pro",
+  "description": "How I built Dispatch Pro, a real-time logistics and ride-dispatch super-app that onboarded 2,500 drivers and 12,000 riders in 60 days on a Kafka-backed live pipeline.",
+  "operatingSystem": "iOS, Android",
+  "applicationCategory": "BusinessApplication",
+  "url": "https://apps.apple.com/pk/app/dispatch-pro-driver/id6738958178",
+  "author": {
+    "@id": "https://www.maazzindani.com/#maaz"
+  },
+  "keywords": "logistics app development, ride dispatch app, real-time delivery app, Flutter logistics app, Kafka mobile backend"
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.maazzindani.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Projects",
+      "item": "https://www.maazzindani.com/projects/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Dispatch Pro",
+      "item": "https://www.maazzindani.com/projects/dispatch-pro/"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <header class="site-nav"><div class="site-nav-inner">
+    <a class="nav-brand" href="/">MZ<span>&copy;</span></a>
+    <nav class="nav-links" aria-label="Primary"><a href="/projects/">Projects</a><a href="/services/">Services</a><a href="/about/">About</a><a href="/#contact">Contact</a></nav>
+  </div></header>
+  <main>
+<nav class="crumbs wrap" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/projects/">Projects</a></li><li>Dispatch Pro</li></ol></nav>
+    <section class="page-hero"><div class="wrap">
+      <p class="eyebrow">Logistics &amp; Ride Dispatch</p>
+      <h1>Dispatch Pro</h1>
+      <p class="page-lead">Dispatch Pro is a real-time logistics and ride-dispatch platform I conceived and owned end to end — the driver and passenger apps, the live dispatch pipeline, and the DevOps that keeps it running around the clock.</p>
+      <div class="hero-meta"><span class="pill accent">Lead Mobile App Developer &amp; Product Owner</span><span class="pill">Logistics &amp; Ride Dispatch</span></div>
+      <div class="btn-row"><a class="btn" href="https://apps.apple.com/pk/app/dispatch-pro-driver/id6738958178" target="_blank" rel="noopener">App Store &#8599;</a></div>
+    </div></section>
+    <section class="metrics wrap" aria-label="Key results"><div class="metric">
+      <p class="m-value"><span>2,500</span></p>
+      <p class="m-label">drivers onboarded</p>
+    </div><div class="metric">
+      <p class="m-value"><span>12,000</span></p>
+      <p class="m-label">riders onboarded</p>
+    </div><div class="metric">
+      <p class="m-value"><span>60 days</span></p>
+      <p class="m-label">to launch v1</p>
+    </div></section>
+    <section class="content"><div class="wrap">
+      <section><h2>The challenge</h2><p>A logistics operator needed to move from spreadsheets and phone calls to a live, GPS-driven dispatch system — fast. The bar was a working v1 in weeks, not quarters, with enough resilience to onboard thousands of drivers and riders without falling over.</p></section>
+<section><h2>What I built</h2><p>Native-feeling Flutter driver and passenger apps sitting on a Spring Boot + WebFlux backend, with Apache Kafka carrying location and order events in real time. Trips, driver state, and dispatch all flow through the event pipeline so the map stays live even under load.</p></section>
+<section><h2>Stack &amp; operations</h2><p>Flutter and Kotlin on the client, Spring Boot / WebFlux and Kafka on the server, deployed on AWS with a Docker + Kubernetes pipeline for zero-downtime releases every few days. I ran the DevOps as well as the mobile build.</p></section>
+<section><h2>Outcome</h2><p>Version one shipped in nine weeks and onboarded 2,500 drivers and 12,000 riders inside 60 days, holding up through the launch surge.</p></section>
+      <section><h2>Tech</h2><ul class="tech-tags"><li>FLUTTER</li><li>KOTLIN</li><li>SPRING BOOT</li><li>KAFKA</li><li>AWS</li></ul></section>
+    </div></section>
+    <section class="related"><div class="wrap">
+    <div class="section-head"><h2>Related work</h2></div>
+    <ul class="card-grid"><li class="card">
+      <span class="c-eyebrow">Logistics · Driver App</span>
+      <h3><a href="/projects/loade-driver/">Loade Driver</a></h3>
+      <p>Driver companion app for the Loade delivery platform.</p>
+      <span class="c-go">Case study &#8594;</span>
+    </li><li class="card">
+      <span class="c-eyebrow">Ride-Hailing Platform</span>
+      <h3><a href="/projects/taxidex/">Taxidex</a></h3>
+      <p>Operator-first taxi &amp; ride-dispatch platform.</p>
+      <span class="c-go">Case study &#8594;</span>
+    </li><li class="card">
+      <span class="c-eyebrow">Automotive Super-App</span>
+      <h3><a href="/projects/carservices/">CarServices</a></h3>
+      <p>Automotive super-app across garage, rides, parts &amp; fleet.</p>
+      <span class="c-go">Case study &#8594;</span>
+    </li></ul>
+  </div></section>
+    <section class="cta"><div class="wrap">
+    <h2>Building something like Dispatch Pro?</h2>
+    <p>Tell me about your product — discovery call within 48 hours.</p>
+    <div class="btn-row">
+      <a class="btn" href="/#contact">Start a project</a>
+      <a class="btn ghost" href="mailto:maazzindani2003@gmail.com">Email me &#8599;</a>
+    </div>
+  </div></section>
+  </main>
+  <footer class="site-foot"><div class="site-foot-inner">
+    <div class="foot-links">
+      <a href="/">Home</a>
+      <a href="/projects/">Projects</a>
+      <a href="/services/">Services</a>
+      <a href="/about/">About</a>
+      <a href="https://github.com/muhammedmuaz" target="_blank" rel="noopener">GitHub &#8599;</a>
+      <a href="https://www.linkedin.com/in/maazzindani/" target="_blank" rel="noopener">LinkedIn &#8599;</a>
+      <a href="mailto:maazzindani2003@gmail.com">Email &#8599;</a>
+    </div>
+    <p class="foot-copy">&copy; 2026 Maaz Zindani &mdash; Karachi, Pakistan</p>
+  </div></footer>
+</body>
+</html>

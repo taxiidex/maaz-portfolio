@@ -49,3 +49,43 @@
 - GitHub: https://github.com/muhammedmuaz
 - RemoteHub: https://www.remotehub.com/maaz.zindani/portfolios
 - Freelancer: https://www.freelancer.com/u/maazzindani1
+
+## Pages
+
+- Home: https://www.maazzindani.com/
+- Projects: https://www.maazzindani.com/projects/
+- Services: https://www.maazzindani.com/services/
+- About: https://www.maazzindani.com/about/
+
+### Project case studies
+
+- Dispatch Pro (Logistics & Ride Dispatch): https://www.maazzindani.com/projects/dispatch-pro/
+- Qist Bazaar (Fintech · Buy Now Pay Later): https://www.maazzindani.com/projects/qist-bazaar/
+- Taxidex (Ride-Hailing Platform): https://www.maazzindani.com/projects/taxidex/
+- CarServices (Automotive Super-App): https://www.maazzindani.com/projects/carservices/
+- Nuclear Home Video (Video Streaming): https://www.maazzindani.com/projects/nuclear-home-video/
+- Raheeb (Consumer App): https://www.maazzindani.com/projects/raheeb/
+- Dawlance Air (IoT · Smart Appliance): https://www.maazzindani.com/projects/dawlance-air/
+- QistLock (Device-Lock SaaS): https://www.maazzindani.com/projects/qistlock/
+- Spotless Laundry (On-Demand Services): https://www.maazzindani.com/projects/spotless-laundry/
+- ShopGo (E-Commerce): https://www.maazzindani.com/projects/shopgo/
+- Loade Driver (Logistics · Driver App): https://www.maazzindani.com/projects/loade-driver/
+- DCOR (Enterprise · Field Data): https://www.maazzindani.com/projects/dcor/
+- EZ Estimater (Construction · B2B): https://www.maazzindani.com/projects/ez-estimater/
+- Glory (Lifestyle · Devotional): https://www.maazzindani.com/projects/glory/
+- Ohana Africa (Consumer App): https://www.maazzindani.com/projects/ohana-africa/
+- SessionBird (SaaS · Customer Engagement): https://www.maazzindani.com/projects/sessionbird/
+- Workforce (Attendance Platform): https://www.maazzindani.com/projects/workforce/
+- Taskvare (Productivity): https://www.maazzindani.com/projects/taskvare/
+- Menulo (Web · Discovery): https://www.maazzindani.com/projects/menulo/
+- QwickDraw (Realtime · Gaming): https://www.maazzindani.com/projects/qwickdraw/
+- Dhero (Mobile App): https://www.maazzindani.com/projects/dhero/
+
+### Services
+
+- Flutter App Development: https://www.maazzindani.com/services/flutter-app-development/
+- MVP Development for Startups: https://www.maazzindani.com/services/mvp-development/
+- Mobile App Developer in Karachi: https://www.maazzindani.com/services/mobile-app-developer-karachi/
+- Backend & DevOps: https://www.maazzindani.com/services/backend-devops/
+- AI Integration for Apps: https://www.maazzindani.com/services/ai-integration/
+- App Modernization & Migration: https://www.maazzindani.com/services/app-modernization/

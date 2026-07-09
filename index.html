@@ -20,7 +20,7 @@
   <meta name="theme-color" content="#0a0a0a" />
   <link rel="preload" href="fonts/anton-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="css/style.css?v=4" />
+  <link rel="stylesheet" href="css/style.css?v=6" />
   <noscript>
     <style>
       .preloader { display: none; }
@@ -53,11 +53,12 @@
         ],
         "hasCredential": [
           { "@type": "EducationalOccupationalCredential", "name": "Meta Certified Android Developer" },
-          { "@type": "EducationalOccupationalCredential", "name": "Google AI Essentials" },
-          { "@type": "EducationalOccupationalCredential", "name": "AWS Cloud Technical Essentials" },
+          { "@type": "EducationalOccupationalCredential", "name": "Google AI Essentials", "url": "https://www.coursera.org/account/accomplishments/certificate/CC8XL15F1B6Z" },
+          { "@type": "EducationalOccupationalCredential", "name": "Working with Onscreen Data in a Flutter Application", "url": "https://coursera.org/share/ce739e065e93cbdb97d1133965efeeae" },
+          { "@type": "EducationalOccupationalCredential", "name": "AWS Fundamentals", "url": "https://www.coursera.org/account/accomplishments/specialization/certificate/9XN11A6XFH7L" },
           { "@type": "EducationalOccupationalCredential", "name": "Google Project Management" },
-          { "@type": "EducationalOccupationalCredential", "name": "Software Product Management" },
-          { "@type": "EducationalOccupationalCredential", "name": "Exploratory Data Analysis for Machine Learning" },
+          { "@type": "EducationalOccupationalCredential", "name": "Software Product Management", "url": "https://www.coursera.org/account/accomplishments/specialization/certificate/UPF6SD6T0THZ" },
+          { "@type": "EducationalOccupationalCredential", "name": "Exploratory Data Analysis for Machine Learning", "url": "https://www.coursera.org/account/accomplishments/certificate/UNZFRGB12UN4" },
           { "@type": "EducationalOccupationalCredential", "name": "Programming Fundamentals in Kotlin" }
         ],
         "sameAs": [
@@ -67,6 +68,15 @@
           "https://laborx.com/freelancers/users/id262176",
           "https://www.freelancer.com/u/maazzindani1"
         ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.maazzindani.com/#website",
+        "url": "https://www.maazzindani.com/",
+        "name": "Maaz Zindani — Lead Mobile App Developer",
+        "description": "Portfolio of Maaz Zindani, a Karachi-based Meta Certified Flutter and mobile app developer.",
+        "publisher": { "@id": "https://www.maazzindani.com/#maaz" },
+        "inLanguage": "en"
       },
       {
         "@type": "SoftwareApplication",
@@ -466,149 +476,191 @@
       <ul class="archive-grid">
         <li class="proj-card">
           <div class="proj-top"><span class="proj-index">01</span><a class="proj-link roll-link" href="https://apps.apple.com/pk/app/dispatch-pro-driver/id6738958178" target="_blank" rel="noopener">APP STORE ↗</a></div>
-          <h3 class="proj-title">DISPATCH PRO</h3>
+          <h3 class="proj-title"><a href="/projects/dispatch-pro/">DISPATCH PRO</a></h3>
           <p class="proj-desc">Real-time logistics &amp; ride-dispatch super-app — 2,500 drivers and 12,000 riders onboarded in 60 days on a Kafka-backed live pipeline.</p>
-          <ul class="proj-tags"><li>FLUTTER</li><li>KOTLIN</li><li>SPRING BOOT</li><li>KAFKA</li><li>AWS</li></ul>
+          <ul class="proj-tags"><li>FLUTTER
+          <a class="proj-case" href="/projects/dispatch-pro/">Case study →</a>
+        </li><li>KOTLIN</li><li>SPRING BOOT</li><li>KAFKA</li><li>AWS</li></ul>
         </li>
 
         <li class="proj-card">
           <div class="proj-top"><span class="proj-index">02</span><a class="proj-link roll-link" href="https://play.google.com/store/apps/details?id=com.tech.qistbazar" target="_blank" rel="noopener">GOOGLE PLAY ↗</a></div>
-          <h3 class="proj-title">QIST BAZAAR</h3>
+          <h3 class="proj-title"><a href="/projects/qist-bazaar/">QIST BAZAAR</a></h3>
           <p class="proj-desc">Buy-now-pay-later fintech platform built from scratch — 50k installs and 12M GMV within six months of launch.</p>
-          <ul class="proj-tags"><li>FLUTTER</li><li>WOOCOMMERCE</li><li>FINTECH</li></ul>
+          <ul class="proj-tags"><li>FLUTTER
+          <a class="proj-case" href="/projects/qist-bazaar/">Case study →</a>
+        </li><li>WOOCOMMERCE</li><li>FINTECH</li></ul>
         </li>
 
         <li class="proj-card">
           <div class="proj-top"><span class="proj-index">03</span><span class="proj-badge">PLATFORM</span></div>
-          <h3 class="proj-title">TAXIDEX</h3>
+          <h3 class="proj-title"><a href="/projects/taxidex/">TAXIDEX</a></h3>
           <p class="proj-desc">Operator-first taxi &amp; ride-dispatch platform — customer, driver and rental apps in a Melos monorepo plus a web operations portal for bookings, fleet and fare-metering.</p>
-          <ul class="proj-tags"><li>FLUTTER</li><li>MELOS</li><li>NEXT.JS</li><li>TYPESCRIPT</li></ul>
+          <ul class="proj-tags"><li>FLUTTER
+          <a class="proj-case" href="/projects/taxidex/">Case study →</a>
+        </li><li>MELOS</li><li>NEXT.JS</li><li>TYPESCRIPT</li></ul>
         </li>
 
         <li class="proj-card">
           <div class="proj-top"><span class="proj-index">04</span><span class="proj-badge">PLATFORM</span></div>
-          <h3 class="proj-title">CARSERVICES</h3>
+          <h3 class="proj-title"><a href="/projects/carservices/">CARSERVICES</a></h3>
           <p class="proj-desc">Automotive super-app spanning garage, courier, rides, a parts marketplace, chauffeur, tow, fleet ops and a driver-hire job board — 280+ backend routes wired to a 235-file Flutter client with PayPal.</p>
-          <ul class="proj-tags"><li>FLUTTER</li><li>NODE.JS</li><li>PAYPAL</li><li>REST</li></ul>
+          <ul class="proj-tags"><li>FLUTTER
+          <a class="proj-case" href="/projects/carservices/">Case study →</a>
+        </li><li>NODE.JS</li><li>PAYPAL</li><li>REST</li></ul>
         </li>
 
         <li class="proj-card">
           <div class="proj-top"><span class="proj-index">05</span><span class="proj-badge">4.6★ · 100K+</span></div>
-          <h3 class="proj-title">NUCLEAR HOME VIDEO</h3>
+          <h3 class="proj-title"><a href="/projects/nuclear-home-video/">NUCLEAR HOME VIDEO</a></h3>
           <p class="proj-desc">Video-streaming app built from scratch — 100k+ users and a 4.6★ rating held on Google Play.</p>
-          <ul class="proj-tags"><li>KOTLIN</li><li>STREAMING</li><li>ANDROID</li></ul>
+          <ul class="proj-tags"><li>KOTLIN
+          <a class="proj-case" href="/projects/nuclear-home-video/">Case study →</a>
+        </li><li>STREAMING</li><li>ANDROID</li></ul>
         </li>
 
         <li class="proj-card">
           <div class="proj-top"><span class="proj-index">06</span><a class="proj-link roll-link" href="https://apps.apple.com/gb/app/raheeb-app/id1645885068" target="_blank" rel="noopener">APP STORE ↗</a></div>
-          <h3 class="proj-title">RAHEEB</h3>
+          <h3 class="proj-title"><a href="/projects/raheeb/">RAHEEB</a></h3>
           <p class="proj-desc">Cross-platform consumer app delivered on a .NET + Azure backend with AWS media, shipped to iOS and Android.</p>
-          <ul class="proj-tags"><li>FLUTTER</li><li>.NET</li><li>AZURE</li><li>AWS</li></ul>
+          <ul class="proj-tags"><li>FLUTTER
+          <a class="proj-case" href="/projects/raheeb/">Case study →</a>
+        </li><li>.NET</li><li>AZURE</li><li>AWS</li></ul>
         </li>
 
         <li class="proj-card">
           <div class="proj-top"><span class="proj-index">07</span><a class="proj-link roll-link" href="https://apps.apple.com/pk/app/dawlance-air/id1384381512" target="_blank" rel="noopener">APP STORE ↗</a></div>
-          <h3 class="proj-title">DAWLANCE AIR</h3>
+          <h3 class="proj-title"><a href="/projects/dawlance-air/">DAWLANCE AIR</a></h3>
           <p class="proj-desc">Smart-appliance control app for Dawlance air conditioners — IoT pairing and remote control across native and Flutter layers.</p>
-          <ul class="proj-tags"><li>SWIFT</li><li>FLUTTER</li><li>KOTLIN</li><li>IOT</li></ul>
+          <ul class="proj-tags"><li>SWIFT
+          <a class="proj-case" href="/projects/dawlance-air/">Case study →</a>
+        </li><li>FLUTTER</li><li>KOTLIN</li><li>IOT</li></ul>
         </li>
 
         <li class="proj-card">
           <div class="proj-top"><span class="proj-index">08</span><span class="proj-badge">LIVE SAAS</span></div>
-          <h3 class="proj-title">QISTLOCK</h3>
+          <h3 class="proj-title"><a href="/projects/qistlock/">QISTLOCK</a></h3>
           <p class="proj-desc">Device installment-lock SaaS — a NestJS backend and React ops dashboard driving an Android Device-Policy-Controller agent that kiosk-locks financed phones on missed payments and clears on receipt.</p>
-          <ul class="proj-tags"><li>NESTJS</li><li>REACT</li><li>ANDROID DPC</li><li>MYSQL</li></ul>
+          <ul class="proj-tags"><li>NESTJS
+          <a class="proj-case" href="/projects/qistlock/">Case study →</a>
+        </li><li>REACT</li><li>ANDROID DPC</li><li>MYSQL</li></ul>
         </li>
 
         <li class="proj-card">
           <div class="proj-top"><span class="proj-index">09</span><a class="proj-link roll-link" href="https://play.google.com/store/apps/details?id=com.spotlessapp.production" target="_blank" rel="noopener">GOOGLE PLAY ↗</a></div>
-          <h3 class="proj-title">SPOTLESS LAUNDRY</h3>
+          <h3 class="proj-title"><a href="/projects/spotless-laundry/">SPOTLESS LAUNDRY</a></h3>
           <p class="proj-desc">On-demand laundry app — 5k daily active users with 45% of orders driven through push campaigns.</p>
-          <ul class="proj-tags"><li>FLUTTER</li><li>LARAVEL</li><li>FIREBASE</li></ul>
+          <ul class="proj-tags"><li>FLUTTER
+          <a class="proj-case" href="/projects/spotless-laundry/">Case study →</a>
+        </li><li>LARAVEL</li><li>FIREBASE</li></ul>
         </li>
 
         <li class="proj-card">
           <div class="proj-top"><span class="proj-index">10</span><a class="proj-link roll-link" href="https://play.google.com/store/apps/details?id=co.proglabs.shop_go" target="_blank" rel="noopener">GOOGLE PLAY ↗</a></div>
-          <h3 class="proj-title">SHOPGO</h3>
+          <h3 class="proj-title"><a href="/projects/shopgo/">SHOPGO</a></h3>
           <p class="proj-desc">E-commerce aggregator with a Python web-scraping catalog engine — 12% month-over-month growth over six straight months.</p>
-          <ul class="proj-tags"><li>FLUTTER</li><li>PYTHON</li><li>SCRAPING</li><li>MYSQL</li></ul>
+          <ul class="proj-tags"><li>FLUTTER
+          <a class="proj-case" href="/projects/shopgo/">Case study →</a>
+        </li><li>PYTHON</li><li>SCRAPING</li><li>MYSQL</li></ul>
         </li>
 
         <li class="proj-card">
           <div class="proj-top"><span class="proj-index">11</span><a class="proj-link roll-link" href="https://play.google.com/store/apps/details?id=app.loade.driver" target="_blank" rel="noopener">GOOGLE PLAY ↗</a></div>
-          <h3 class="proj-title">LOADE DRIVER</h3>
+          <h3 class="proj-title"><a href="/projects/loade-driver/">LOADE DRIVER</a></h3>
           <p class="proj-desc">Driver companion app for the Loade delivery platform — live jobs, navigation and earnings on a .NET + Firebase backend.</p>
-          <ul class="proj-tags"><li>FLUTTER</li><li>.NET</li><li>FIREBASE</li><li>AWS</li></ul>
+          <ul class="proj-tags"><li>FLUTTER
+          <a class="proj-case" href="/projects/loade-driver/">Case study →</a>
+        </li><li>.NET</li><li>FIREBASE</li><li>AWS</li></ul>
         </li>
 
         <li class="proj-card">
           <div class="proj-top"><span class="proj-index">12</span><span class="proj-badge">FORTEVE</span></div>
-          <h3 class="proj-title">DCOR</h3>
+          <h3 class="proj-title"><a href="/projects/dcor/">DCOR</a></h3>
           <p class="proj-desc">Enterprise offline-first field data-collection &amp; verification app — Brand-Ambassador / Back-Checker / Supervisor roles, GPS attendance, a dynamic multi-step form engine and five-language RTL support.</p>
-          <ul class="proj-tags"><li>FLUTTER</li><li>BLOC</li><li>HIVE</li><li>OFFLINE-FIRST</li></ul>
+          <ul class="proj-tags"><li>FLUTTER
+          <a class="proj-case" href="/projects/dcor/">Case study →</a>
+        </li><li>BLOC</li><li>HIVE</li><li>OFFLINE-FIRST</li></ul>
         </li>
 
         <li class="proj-card">
           <div class="proj-top"><span class="proj-index">13</span><a class="proj-link roll-link" href="https://play.google.com/store/apps/details?id=com.probuilds.ezestimater" target="_blank" rel="noopener">GOOGLE PLAY ↗</a></div>
-          <h3 class="proj-title">EZ ESTIMATER</h3>
+          <h3 class="proj-title"><a href="/projects/ez-estimater/">EZ ESTIMATER</a></h3>
           <p class="proj-desc">Construction cost-estimation app for contractors — quoting and job tracking on a Laravel + Firebase stack.</p>
-          <ul class="proj-tags"><li>LARAVEL</li><li>FLUTTER</li><li>FIREBASE</li></ul>
+          <ul class="proj-tags"><li>LARAVEL
+          <a class="proj-case" href="/projects/ez-estimater/">Case study →</a>
+        </li><li>FLUTTER</li><li>FIREBASE</li></ul>
         </li>
 
         <li class="proj-card">
           <div class="proj-top"><span class="proj-index">14</span><a class="proj-link roll-link" href="https://apps.apple.com/pk/app/glory-devotional-prayer/id6746167083" target="_blank" rel="noopener">APP STORE ↗</a></div>
-          <h3 class="proj-title">GLORY</h3>
+          <h3 class="proj-title"><a href="/projects/glory/">GLORY</a></h3>
           <p class="proj-desc">Devotional prayer &amp; daily-inspiration app with a clean, content-first Flutter experience.</p>
-          <ul class="proj-tags"><li>FLUTTER</li><li>FIREBASE</li></ul>
+          <ul class="proj-tags"><li>FLUTTER
+          <a class="proj-case" href="/projects/glory/">Case study →</a>
+        </li><li>FIREBASE</li></ul>
         </li>
 
         <li class="proj-card">
           <div class="proj-top"><span class="proj-index">15</span><a class="proj-link roll-link" href="https://play.google.com/store/apps/details?id=com.ohana.africa" target="_blank" rel="noopener">GOOGLE PLAY ↗</a></div>
-          <h3 class="proj-title">OHANA AFRICA</h3>
+          <h3 class="proj-title"><a href="/projects/ohana-africa/">OHANA AFRICA</a></h3>
           <p class="proj-desc">Consumer services app for the African market, built on Flutter with a Firebase real-time backend.</p>
-          <ul class="proj-tags"><li>FLUTTER</li><li>FIREBASE</li></ul>
+          <ul class="proj-tags"><li>FLUTTER
+          <a class="proj-case" href="/projects/ohana-africa/">Case study →</a>
+        </li><li>FIREBASE</li></ul>
         </li>
 
         <li class="proj-card">
           <div class="proj-top"><span class="proj-index">16</span><span class="proj-badge">SAAS</span></div>
-          <h3 class="proj-title">SESSIONBIRD</h3>
+          <h3 class="proj-title"><a href="/projects/sessionbird/">SESSIONBIRD</a></h3>
           <p class="proj-desc">Omnichannel customer-engagement SaaS — campaigns, chatbot, contacts, tickets, automation and analytics under one Flutter app.</p>
-          <ul class="proj-tags"><li>FLUTTER</li><li>AUTOMATION</li><li>ANALYTICS</li></ul>
+          <ul class="proj-tags"><li>FLUTTER
+          <a class="proj-case" href="/projects/sessionbird/">Case study →</a>
+        </li><li>AUTOMATION</li><li>ANALYTICS</li></ul>
         </li>
 
         <li class="proj-card">
           <div class="proj-top"><span class="proj-index">17</span><span class="proj-badge">PLATFORM</span></div>
-          <h3 class="proj-title">WORKFORCE</h3>
+          <h3 class="proj-title"><a href="/projects/workforce/">WORKFORCE</a></h3>
           <p class="proj-desc">Workforce attendance-management suite — a field app, an admin console and a self-hosted push &amp; reconciliation server on the Firebase Admin SDK.</p>
-          <ul class="proj-tags"><li>FLUTTER</li><li>NODE.JS</li><li>FIREBASE</li></ul>
+          <ul class="proj-tags"><li>FLUTTER
+          <a class="proj-case" href="/projects/workforce/">Case study →</a>
+        </li><li>NODE.JS</li><li>FIREBASE</li></ul>
         </li>
 
         <li class="proj-card">
           <div class="proj-top"><span class="proj-index">18</span><a class="proj-link roll-link" href="https://taskvare.com" target="_blank" rel="noopener">LIVE ↗</a></div>
-          <h3 class="proj-title">TASKVARE</h3>
+          <h3 class="proj-title"><a href="/projects/taskvare/">TASKVARE</a></h3>
           <p class="proj-desc">Task &amp; project-management suite — a React web app and Flutter mobile client sharing one TypeScript stack.</p>
-          <ul class="proj-tags"><li>TYPESCRIPT</li><li>REACT</li><li>FLUTTER</li></ul>
+          <ul class="proj-tags"><li>TYPESCRIPT
+          <a class="proj-case" href="/projects/taskvare/">Case study →</a>
+        </li><li>REACT</li><li>FLUTTER</li></ul>
         </li>
 
         <li class="proj-card">
           <div class="proj-top"><span class="proj-index">19</span><a class="proj-link roll-link" href="https://www.menulo.de" target="_blank" rel="noopener">LIVE ↗</a></div>
-          <h3 class="proj-title">MENULO</h3>
+          <h3 class="proj-title"><a href="/projects/menulo/">MENULO</a></h3>
           <p class="proj-desc">Restaurant discovery &amp; menu platform (Germany) with a Python + BeautifulSoup ingestion pipeline.</p>
-          <ul class="proj-tags"><li>PYTHON</li><li>BEAUTIFULSOUP</li><li>WEB</li></ul>
+          <ul class="proj-tags"><li>PYTHON
+          <a class="proj-case" href="/projects/menulo/">Case study →</a>
+        </li><li>BEAUTIFULSOUP</li><li>WEB</li></ul>
         </li>
 
         <li class="proj-card">
           <div class="proj-top"><span class="proj-index">20</span><span class="proj-badge">REALTIME</span></div>
-          <h3 class="proj-title">QWICKDRAW</h3>
+          <h3 class="proj-title"><a href="/projects/qwickdraw/">QWICKDRAW</a></h3>
           <p class="proj-desc">Live prize-draw game platform — hosts run real-time events, participants join from anywhere and win. <em>Play. Win. Anywhere.</em></p>
-          <ul class="proj-tags"><li>FLUTTER</li><li>BLOC</li><li>REALTIME</li></ul>
+          <ul class="proj-tags"><li>FLUTTER
+          <a class="proj-case" href="/projects/qwickdraw/">Case study →</a>
+        </li><li>BLOC</li><li>REALTIME</li></ul>
         </li>
 
         <li class="proj-card">
           <div class="proj-top"><span class="proj-index">21</span><span class="proj-badge">MOBILE</span></div>
-          <h3 class="proj-title">DHERO</h3>
+          <h3 class="proj-title"><a href="/projects/dhero/">DHERO</a></h3>
           <p class="proj-desc">Cross-platform mobile app delivered on a .NET + Firebase backend, shipped for iOS.</p>
-          <ul class="proj-tags"><li>FLUTTER</li><li>.NET</li><li>FIREBASE</li></ul>
+          <ul class="proj-tags"><li>FLUTTER
+          <a class="proj-case" href="/projects/dhero/">Case study →</a>
+        </li><li>.NET</li><li>FIREBASE</li></ul>
         </li>
       </ul>
     </section>
@@ -665,12 +717,33 @@
       </div>
       <ul class="certs-grid">
         <li class="cert-card"><span class="cert-issuer">META</span><p class="cert-name">Certified Android Developer</p></li>
-        <li class="cert-card"><span class="cert-issuer">GOOGLE</span><p class="cert-name">AI Essentials</p></li>
-        <li class="cert-card"><span class="cert-issuer">AWS</span><p class="cert-name">Cloud Technical Essentials</p></li>
+        <li class="cert-card">
+          <a class="cert-a" href="https://www.coursera.org/account/accomplishments/certificate/CC8XL15F1B6Z" target="_blank" rel="noopener">
+            <span class="cert-issuer">GOOGLE</span><p class="cert-name">AI Essentials</p><span class="cert-verify">VERIFY ↗</span>
+          </a>
+        </li>
+        <li class="cert-card">
+          <a class="cert-a" href="https://coursera.org/share/ce739e065e93cbdb97d1133965efeeae" target="_blank" rel="noopener">
+            <span class="cert-issuer">GOOGLE CLOUD</span><p class="cert-name">Onscreen Data in Flutter</p><span class="cert-verify">VERIFY ↗</span>
+          </a>
+        </li>
+        <li class="cert-card">
+          <a class="cert-a" href="https://www.coursera.org/account/accomplishments/certificate/UNZFRGB12UN4" target="_blank" rel="noopener">
+            <span class="cert-issuer">IBM</span><p class="cert-name">Exploratory Data Analysis for ML</p><span class="cert-verify">VERIFY ↗</span>
+          </a>
+        </li>
+        <li class="cert-card">
+          <a class="cert-a" href="https://www.coursera.org/account/accomplishments/specialization/certificate/UPF6SD6T0THZ" target="_blank" rel="noopener">
+            <span class="cert-issuer">UNIVERSITY OF ALBERTA</span><p class="cert-name">Software Product Management</p><span class="cert-verify">VERIFY ↗</span>
+          </a>
+        </li>
+        <li class="cert-card">
+          <a class="cert-a" href="https://www.coursera.org/account/accomplishments/specialization/certificate/9XN11A6XFH7L" target="_blank" rel="noopener">
+            <span class="cert-issuer">AWS</span><p class="cert-name">AWS Fundamentals</p><span class="cert-verify">VERIFY ↗</span>
+          </a>
+        </li>
         <li class="cert-card"><span class="cert-issuer">GOOGLE</span><p class="cert-name">Project Management</p></li>
-        <li class="cert-card"><span class="cert-issuer">SPECIALIZATION</span><p class="cert-name">Software Product Management</p></li>
-        <li class="cert-card"><span class="cert-issuer">MACHINE LEARNING</span><p class="cert-name">Exploratory Data Analysis</p></li>
-        <li class="cert-card"><span class="cert-issuer">KOTLIN</span><p class="cert-name">Programming Fundamentals</p></li>
+        <li class="cert-card"><span class="cert-issuer">JETBRAINS</span><p class="cert-name">Programming Fundamentals in Kotlin</p></li>
       </ul>
     </section>
 
@@ -815,6 +888,9 @@
     <footer class="site-footer" id="site-footer">
       <div class="footer">
         <div class="footer-links">
+          <a class="roll-link" href="/projects/">PROJECTS</a>
+          <a class="roll-link" href="/services/">SERVICES</a>
+          <a class="roll-link" href="/about/">ABOUT</a>
           <a class="roll-link" href="https://github.com/muhammedmuaz" target="_blank" rel="noopener">GITHUB ↗</a>
           <a class="roll-link" href="https://www.linkedin.com/in/maazzindani" target="_blank" rel="noopener">LINKEDIN ↗</a>
           <a class="roll-link" href="mailto:maazzindani2003@gmail.com">EMAIL ↗</a>
