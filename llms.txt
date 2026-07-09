@@ -1,0 +1,51 @@
+# Maaz Zindani — Lead Mobile App Developer
+
+> Maaz Zindani is a Karachi-based, Meta Certified mobile app developer specializing in cross-platform Flutter and native Android/iOS solutions. He provides end-to-end software development, integrating AWS and DevOps pipelines for scalable mobile architecture.
+
+## Identity
+
+- Role: Lead Mobile App Developer (Mobile App Team Lead) at Forteve
+- Location: Karachi, Pakistan — working with clients worldwide
+- Education: BS Artificial Intelligence, SZABIST Karachi (2015–2019)
+- Contact: maazzindani2003@gmail.com
+
+## Skills
+
+- Mobile: Flutter, Dart, Kotlin, Swift, React Native
+- Backend & DevOps: Laravel, Spring Boot, AWS, Firebase, Docker, Kubernetes, CI/CD pipelines with zero-downtime releases
+- Leadership: software product management, agile delivery, mentoring 6-developer teams, 2-week sprint cadence
+- Emerging: AI integration and intelligent application workflows
+
+## Certifications
+
+- Meta Certified Android Developer
+- Google AI Essentials
+- AWS Cloud Technical Essentials
+- Google Project Management
+- Software Product Management
+- Exploratory Data Analysis for Machine Learning
+- Programming Fundamentals in Kotlin
+
+## Services
+
+- MVP development — idea to app store in 90 days, Flutter-first with production backends
+- App modernization — legacy native codebases migrated to unified Flutter architecture
+- AI integration — LLM features, RAG pipelines and automation in mobile products
+- Launch & scale — ASO, analytics, CI/CD and cloud operations at 99.9% uptime
+
+## Selected work
+
+- Dispatch Pro — real-time logistics super-app; 2,500 drivers and 12,000 riders onboarded in 60 days
+- Qist Bazaar — BNPL fintech app built from scratch; 50k installs and 12M GMV in 6 months
+- Nuclear Home Video — video streaming app; 100k+ users, 4.6-star rating on Google Play
+
+## Track record
+
+6+ years experience · 15+ apps shipped · 100k+ users reached · 4.8-star average rating · 99.9% uptime
+
+## Links
+
+- LinkedIn: https://www.linkedin.com/in/maazzindani/
+- GitHub: https://github.com/muhammedmuaz
+- RemoteHub: https://www.remotehub.com/maaz.zindani/portfolios
+- Freelancer: https://www.freelancer.com/u/maazzindani1
