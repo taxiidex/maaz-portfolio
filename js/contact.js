@@ -111,6 +111,10 @@
       type: fields.type.value,
       budget: fields.budget.value || 'Not specified',
       message: fields.message.value.trim(),
+      // FormSubmit.co control fields (ignored by other endpoints)
+      _subject: `New project inquiry — ${fields.type.value || 'Mobile App'} (${fields.name.value.trim()})`,
+      _template: 'table',
+      _captcha: 'false',
     };
 
     // no live endpoint configured → open a prefilled email draft so the

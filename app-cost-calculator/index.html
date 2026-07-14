@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>App Cost Calculator — Estimate Your App | Maaz Zindani</title>
+  <meta name="description" content="Free app cost calculator — get an instant, indicative estimate for building your iOS and Android app in 2026, then send the scope for a precise quote." />
+  <link rel="canonical" href="https://www.maazzindani.com/app-cost-calculator/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="author" content="Maaz Zindani" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Maaz Zindani" />
+  <meta property="og:title" content="App Cost Calculator — Estimate Your App | Maaz Zindani" />
+  <meta property="og:description" content="Free app cost calculator — get an instant, indicative estimate for building your iOS and Android app in 2026, then send the scope for a precise quote." />
+  <meta property="og:url" content="https://www.maazzindani.com/app-cost-calculator/" />
+  <meta property="og:image" content="https://www.maazzindani.com/assets/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="App Cost Calculator — Estimate Your App | Maaz Zindani" />
+  <meta name="twitter:description" content="Free app cost calculator — get an instant, indicative estimate for building your iOS and Android app in 2026, then send the scope for a precise quote." />
+  <meta name="twitter:image" content="https://www.maazzindani.com/assets/og.jpg" />
+  <meta name="theme-color" content="#0a0a0a" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="preload" href="/fonts/anton-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/css/pages.css?v=2" />
+  <style>
+    .calc-layout { display:grid; grid-template-columns:1fr; gap:24px; align-items:start; }
+    @media(min-width:900px){ .calc-layout{ grid-template-columns:minmax(0,1fr) 340px; } }
+    .calc { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:16px; }
+    .calc-group { border:1px solid var(--cream-faint); padding:18px 20px; }
+    .calc-group legend { font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--emerald); padding:0 8px; }
+    .opt { display:flex; align-items:center; gap:10px; padding:8px 0; cursor:pointer; font-size:15px; color:var(--cream); }
+    .opt input { accent-color:var(--emerald); width:17px; height:17px; }
+    .calc-result { border:1px solid var(--emerald-dim); background:rgba(10,16,13,.6); padding:clamp(24px,3vw,32px); }
+    @media(min-width:900px){ .calc-result{ position:sticky; top:96px; } }
+    .cr-label { font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--cream-dim); }
+    .cr-range { font-family:var(--display); font-size:clamp(40px,7vw,72px); line-height:1; color:var(--cream); margin-top:6px; }
+    .cr-range span { color:var(--emerald); }
+    .cr-time { font-size:15px; color:var(--emerald); margin-top:6px; letter-spacing:.04em; }
+    .cr-note { font-size:13px; color:var(--cream-dim); margin-top:14px; max-width:460px; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "App Cost Calculator",
+  "url": "https://www.maazzindani.com/app-cost-calculator/",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "description": "Free interactive tool to estimate the cost of building a mobile app.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@id": "https://www.maazzindani.com/#maaz"
+  }
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.maazzindani.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "App Cost Calculator",
+      "item": "https://www.maazzindani.com/app-cost-calculator/"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <header class="site-nav"><div class="site-nav-inner">
+    <a class="nav-brand" href="/">MZ<span>&copy;</span></a>
+    <nav class="nav-links" aria-label="Primary"><a href="/projects/">Projects</a><a href="/services/">Services</a><a href="/blog/">Blog</a><a href="/app-cost-calculator/" aria-current="page" class="nav-cta">App Cost</a><a href="/about/">About</a><a href="/#contact">Contact</a></nav>
+  </div></header>
+  <main>
+<nav class="crumbs wrap" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li>App Cost Calculator</li></ol></nav>
+    <section class="page-hero"><div class="wrap">
+      <p class="eyebrow">Free tool</p>
+      <h1>App Cost Calculator</h1>
+      <p class="page-lead">Answer five quick questions and get an instant, indicative estimate for your mobile app &mdash; then send me the scope for a precise quote.</p>
+    </div></section>
+    <section class="content"><div class="wrap">
+      <div class="calc-layout">
+      <form class="calc" id="calc" novalidate>
+        <fieldset class="calc-group"><legend>1. Platforms</legend>
+          <label class="opt"><input type="radio" name="platform" value="both" checked><span>iOS + Android (cross-platform)</span></label><label class="opt"><input type="radio" name="platform" value="ios"><span>iOS only</span></label><label class="opt"><input type="radio" name="platform" value="android"><span>Android only</span></label>
+        </fieldset>
+        <fieldset class="calc-group"><legend>2. App type</legend>
+          <label class="opt"><input type="radio" name="apptype" value="simple" checked><span>Simple / content app</span></label><label class="opt"><input type="radio" name="apptype" value="marketplace"><span>Marketplace / on-demand</span></label><label class="opt"><input type="radio" name="apptype" value="social"><span>Social / streaming</span></label><label class="opt"><input type="radio" name="apptype" value="fintech"><span>Fintech / enterprise</span></label>
+        </fieldset>
+        <fieldset class="calc-group"><legend>3. Features</legend>
+          <label class="opt"><input type="checkbox" name="feature" value="auth"><span>Accounts &amp; profiles</span></label><label class="opt"><input type="checkbox" name="feature" value="payments"><span>Payments</span></label><label class="opt"><input type="checkbox" name="feature" value="realtime"><span>Real-time (chat / tracking)</span></label><label class="opt"><input type="checkbox" name="feature" value="maps"><span>Maps / geolocation</span></label><label class="opt"><input type="checkbox" name="feature" value="admin"><span>Admin dashboard</span></label><label class="opt"><input type="checkbox" name="feature" value="push"><span>Push notifications</span></label><label class="opt"><input type="checkbox" name="feature" value="ai"><span>AI features</span></label><label class="opt"><input type="checkbox" name="feature" value="integrations"><span>Third-party integrations</span></label>
+        </fieldset>
+        <fieldset class="calc-group"><legend>4. Design</legend>
+          <label class="opt"><input type="radio" name="design" value="custom" checked><span>Custom (standard polish)</span></label><label class="opt"><input type="radio" name="design" value="template"><span>Template / minimal</span></label><label class="opt"><input type="radio" name="design" value="premium"><span>Premium (bespoke, animated)</span></label>
+        </fieldset>
+        <fieldset class="calc-group"><legend>5. Backend</legend>
+          <label class="opt"><input type="radio" name="backend" value="baas" checked><span>Managed / Firebase</span></label><label class="opt"><input type="radio" name="backend" value="custom"><span>Custom backend</span></label><label class="opt"><input type="radio" name="backend" value="scale"><span>Custom + DevOps at scale</span></label>
+        </fieldset>
+      </form>
+      <aside class="calc-result" id="calc-result" aria-live="polite">
+        <p class="cr-label">Indicative estimate</p>
+        <p class="cr-range" id="cr-range">&mdash;</p>
+        <p class="cr-time" id="cr-time"></p>
+        <p class="cr-note">A rough, indicative range only &mdash; your exact quote comes after a short discovery call.</p>
+        <div class="btn-row">
+          <a class="btn" id="cr-email" href="#">Email me this scope &#8599;</a>
+          <a class="btn ghost" href="/#contact">Book a discovery call</a>
+        </div>
+      </aside>
+      </div>
+    </div></section>
+    <section class="cta"><div class="wrap">
+    <h2>Prefer to just talk it through?</h2>
+    <p>Tell me about your app &amp;mdash; discovery call within 48 hours.</p>
+    <div class="btn-row">
+      <a class="btn" href="/#contact">Start a project</a>
+      <a class="btn ghost" href="mailto:maazzindani2003@gmail.com">Email me &#8599;</a>
+    </div>
+  </div></section>
+  </main>
+  <footer class="site-foot"><div class="site-foot-inner">
+    <div class="foot-links">
+      <a href="/">Home</a>
+      <a href="/projects/">Projects</a>
+      <a href="/services/">Services</a>
+      <a href="/blog/">Blog</a>
+      <a href="/app-cost-calculator/">App Cost Calculator</a>
+      <a href="/about/">About</a>
+      <a href="https://github.com/muhammedmuaz" target="_blank" rel="noopener">GitHub &#8599;</a>
+      <a href="https://www.linkedin.com/in/maazzindani/" target="_blank" rel="noopener">LinkedIn &#8599;</a>
+      <a href="mailto:maazzindani2003@gmail.com">Email &#8599;</a>
+    </div>
+    <p class="foot-copy">&copy; 2026 Maaz Zindani &mdash; Karachi, Pakistan</p>
+  </div></footer>
+  <script>
+  (function(){
+    var base={simple:6000,marketplace:18000,social:22000,fintech:30000};
+    var plat={both:1.0,ios:0.85,android:0.85};
+    var feat={auth:1500,payments:3000,realtime:4000,maps:2000,admin:4000,push:800,ai:5000,integrations:2500};
+    var des={custom:1.0,template:0.9,premium:1.25};
+    var back={baas:0,custom:5000,scale:12000};
+    var form=document.getElementById('calc');
+    var rangeEl=document.getElementById('cr-range');
+    var timeEl=document.getElementById('cr-time');
+    var emailEl=document.getElementById('cr-email');
+    function val(n){var el=form.querySelector('input[name="'+n+'"]:checked');return el?el.value:null;}
+    function feats(){return Array.prototype.map.call(form.querySelectorAll('input[name="feature"]:checked'),function(e){return e.value;});}
+    function round500(x){return Math.round(x/500)*500;}
+    function fmt(n){return '$'+n.toLocaleString('en-US');}
+    function compute(){
+      var t=val('apptype'), p=val('platform'), d=val('design'), b=val('backend'), fs=feats();
+      var sum=fs.reduce(function(a,k){return a+(feat[k]||0);},0);
+      var total=(base[t]*plat[p]+sum+back[b])*des[d];
+      var low=round500(total*0.8), high=round500(total*1.2);
+      var weeks=Math.max(4,Math.min(40,Math.round(total/1300)));
+      rangeEl.innerHTML='<span>'+fmt(low)+'</span> – <span>'+fmt(high)+'</span>';
+      timeEl.textContent='Estimated timeline: ~'+weeks+' weeks';
+      var lines=['App estimate request','','Platforms: '+t,'App type: '+t,'Features: '+(fs.join(', ')||'none selected'),'Design: '+d,'Backend: '+b,'','Indicative estimate: '+fmt(low)+' - '+fmt(high),'Estimated timeline: ~'+weeks+' weeks','','My project:'];
+      emailEl.href='mailto:maazzindani2003@gmail.com?subject='+encodeURIComponent('App estimate — '+t+' ('+fmt(low)+'-'+fmt(high)+')')+'&body='+encodeURIComponent(lines.join('\n'));
+    }
+    form.addEventListener('change',compute); compute();
+  })();
+  </script>
+</body>
+</html>

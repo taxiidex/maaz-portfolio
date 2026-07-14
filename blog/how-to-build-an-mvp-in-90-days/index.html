@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Build an MVP in 90 Days | Maaz Zindani</title>
+  <meta name="description" content="A phase-by-phase playbook to build an MVP in 90 days that scales instead of getting thrown away. Discovery, scope-cutting, 2-week sprints, and launch, from a Flutter expert." />
+  <link rel="canonical" href="https://www.maazzindani.com/blog/how-to-build-an-mvp-in-90-days/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="author" content="Maaz Zindani" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Maaz Zindani" />
+  <meta property="og:title" content="How to Build an MVP in 90 Days | Maaz Zindani" />
+  <meta property="og:description" content="A phase-by-phase playbook to build an MVP in 90 days that scales instead of getting thrown away. Discovery, scope-cutting, 2-week sprints, and launch, from a Flutter expert." />
+  <meta property="og:url" content="https://www.maazzindani.com/blog/how-to-build-an-mvp-in-90-days/" />
+  <meta property="og:image" content="https://www.maazzindani.com/assets/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How to Build an MVP in 90 Days | Maaz Zindani" />
+  <meta name="twitter:description" content="A phase-by-phase playbook to build an MVP in 90 days that scales instead of getting thrown away. Discovery, scope-cutting, 2-week sprints, and launch, from a Flutter expert." />
+  <meta name="twitter:image" content="https://www.maazzindani.com/assets/og.jpg" />
+  <meta name="theme-color" content="#0a0a0a" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="preload" href="/fonts/anton-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/css/pages.css?v=2" />
+  
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How to Build an MVP in 90 Days (Without a Rebuild Later)",
+  "description": "A phase-by-phase playbook to build an MVP in 90 days that scales instead of getting thrown away. Discovery, scope-cutting, 2-week sprints, and launch, from a Flutter expert.",
+  "datePublished": "2026-07-09",
+  "dateModified": "2026-07-09",
+  "author": {
+    "@id": "https://www.maazzindani.com/#maaz"
+  },
+  "publisher": {
+    "@id": "https://www.maazzindani.com/#maaz"
+  },
+  "image": "https://www.maazzindani.com/assets/og.jpg",
+  "mainEntityOfPage": "https://www.maazzindani.com/blog/how-to-build-an-mvp-in-90-days/",
+  "keywords": "build an mvp, mvp development, how to build an mvp in 90 days, mvp in 90 days, minimum viable product, mvp that scales, flutter mvp, mvp roadmap"
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.maazzindani.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://www.maazzindani.com/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "How to Build an MVP in 90 Days (Without a Rebuild Later)",
+      "item": "https://www.maazzindani.com/blog/how-to-build-an-mvp-in-90-days/"
+    }
+  ]
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can you really build a functional MVP in 90 days?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, if scope is cut to a single core loop and the team builds in two-week sprints against a fixed launch date. I shipped a working v1 of Dispatch Pro in nine weeks. The key is that an MVP proves one valuable user journey end to end, not a full product with features removed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I stop my MVP from needing a rebuild later?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Spend the first sprint on architecture, not features. A clean codebase, a real data model, a versioned API, proper environments, and CI/CD from day one mean version two extends the MVP instead of replacing it. The rebuild trap is almost always an architecture shortcut taken in week one."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What should I cut from an MVP to hit 90 days?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cut everything that does not serve the one core loop: multi-role permissions, wallets, full admin panels, secondary journeys, and localization. Park them on a v2 roadmap so nothing feels deleted. The one thing you never cut is craft and quality, since users judge trust by how the product feels."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does it cost to build an MVP?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends heavily on scope. A single-loop app is a very different number from a two-sided marketplace with payments and an admin panel, even on the same 90-day timeline. Run your idea through my app cost calculator for a grounded ballpark, or reach out to discuss scope directly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why use Flutter for an MVP?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Flutter lets one team ship iOS and Android from a single codebase, which is a major multiplier on a tight 90-day timeline. It also produces production-grade apps, so the MVP scales rather than being throwaway. Qist Bazaar and Dispatch Pro were both built this way and handled real traction without a rewrite."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <header class="site-nav"><div class="site-nav-inner">
+    <a class="nav-brand" href="/">MZ<span>&copy;</span></a>
+    <nav class="nav-links" aria-label="Primary"><a href="/projects/">Projects</a><a href="/services/">Services</a><a href="/blog/">Blog</a><a href="/app-cost-calculator/" class="nav-cta">App Cost</a><a href="/about/">About</a><a href="/#contact">Contact</a></nav>
+  </div></header>
+  <main>
+<nav class="crumbs wrap" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/blog/">Blog</a></li><li>How to Build an MVP in 90 Days (Without a Rebuild Later)</li></ol></nav>
+    <article>
+    <header class="page-hero"><div class="wrap">
+      <p class="eyebrow">Article</p>
+      <h1>How to Build an MVP in 90 Days (Without a Rebuild Later)</h1>
+      <p class="post-meta">9 Jul 2026 · 7 min read · MVP, Product Strategy, Flutter, Startups</p>
+      <p class="page-lead">A practical, phase-by-phase playbook for shipping a real MVP in 90 days, architected so it scales to your first 50k users instead of getting rebuilt from scratch six months later.</p>
+    </div></header>
+    <div class="content"><div class="wrap">
+      <div class="post-body"><p>You can build a real MVP in 90 days if you cut scope to a single core loop, architect for scale from day one, and ship in two-week sprints against a fixed launch date. The trap most teams fall into isn't building too slowly, it's building the wrong thing broadly, then throwing it away when real users show up. This playbook is the exact sequence I use to ship an MVP that survives its first 50,000 installs instead of getting rebuilt six months in.</p>
+
+<p>I've shipped this way more than once. <a href="/projects/qist-bazaar/">Qist Bazaar, a BNPL fintech app</a>, went from zero to 50k installs and 12M GMV within six months of launch. <a href="/projects/dispatch-pro/">Dispatch Pro, a real-time logistics super-app</a>, had a working v1 in nine weeks before we onboarded thousands of drivers and riders. Neither needed a ground-up rewrite to get there, and that's the whole point.</p>
+
+<h2>What "MVP in 90 days" actually means</h2>
+
+<p>Ninety days is roughly thirteen weeks. That is not a lot of time, so the definition of "viable" has to be honest. An MVP is not a demo, and it is not your full product with half the features missing. It is the smallest thing that lets one type of user complete one valuable action end to end, on real infrastructure, so you can learn whether anyone actually wants it.</p>
+
+<p>The "without a rebuild later" part matters just as much as the 90 days. A weekend-prototype MVP collapses the moment you get traction, forcing a costly rewrite. The goal is a lean product with a foundation that holds, so version two is an extension, not a demolition.</p>
+
+<h2>The 90-day MVP playbook, phase by phase</h2>
+
+<p>Here is the sequence I run, mapped to the calendar. The build phase is the longest, but the first two weeks decide whether the whole thing succeeds.</p>
+
+<ol>
+  <li><strong>Discovery and problem framing (weeks 1-2).</strong> Before any code, I pin down the one core loop, the single user journey that has to work for the product to have a reason to exist. For Dispatch Pro that was "rider requests a ride, nearby driver accepts, both track it live." Everything else is negotiable. I write down the target user, the job they are hiring the app to do, and the one metric that proves it worked. Vague discovery is where most 90-day plans quietly die.</li>
+
+  <li><strong>Ruthless scope-cut (end of week 2).</strong> I take every feature idea and force it into two buckets: <em>must-have for the core loop</em> and <em>everything else</em>. The second bucket is not deleted, it is parked on a v2 roadmap so nobody feels like their idea was thrown away. This is the hardest conversation in the whole project and the most valuable. If a feature does not directly serve the core loop, it does not ship in the first 90 days.</li>
+
+  <li><strong>Architect for scale before writing feature code (weeks 2-3).</strong> This is the step that separates an MVP that scales from one you rebuild. I set up the project structure, a clean data model, an API contract, auth, environments, and CI/CD in the first sprint, not the last. It costs a few extra days now and saves months later. More on the specific choices below.</li>
+
+  <li><strong>Build in two-week sprints (weeks 3-11).</strong> Four focused sprints. Each sprint ships a working, testable slice of the core loop, not a pile of half-finished screens. I demo something usable at the end of every sprint so scope stays honest and surprises surface early. Working software every two weeks is the single best defense against a 90-day plan silently slipping to 180.</li>
+
+  <li><strong>Launch, instrument, and harden (weeks 11-13).</strong> The final stretch is store submission, analytics and crash reporting wired in, a real onboarding flow, and load-testing the paths that will actually get hammered. You launch to a small real audience, watch the core-loop metric, and fix what breaks. Then, and only then, you start pulling features off the v2 list.</li>
+</ol>
+
+<h2>The scope-cut, in a table</h2>
+
+<p>Scope-cutting is abstract until you see it applied. Here is roughly how the buckets look for a typical two-sided marketplace or on-demand app, the kind of MVP I build most often.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Area</th>
+      <th>Ships in the 90-day MVP</th>
+      <th>Parked for v2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Auth</td>
+      <td>Phone/email sign-in, one role</td>
+      <td>SSO, multi-role permissions, teams</td>
+    </tr>
+    <tr>
+      <td>Core loop</td>
+      <td>The one end-to-end journey</td>
+      <td>Secondary journeys and edge flows</td>
+    </tr>
+    <tr>
+      <td>Payments</td>
+      <td>One provider, one currency</td>
+      <td>Wallets, split payments, refunds UI</td>
+    </tr>
+    <tr>
+      <td>Admin</td>
+      <td>Minimal dashboard or DB access</td>
+      <td>Full admin panel, roles, reporting</td>
+    </tr>
+    <tr>
+      <td>Polish</td>
+      <td>Clean, consistent, on-brand</td>
+      <td>Animations, theming, localization</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Notice that "polish" still ships. A common mistake is treating quality as a v2 concern. Users judge an MVP by whether it feels trustworthy, especially in fintech. Cut features, never cut craft.</p>
+
+<h2>How to architect an MVP that scales instead of getting thrown away</h2>
+
+<p>The rebuild trap is almost always an architecture decision made in week one, not a feature decision. Here is where I spend the up-front effort so the foundation holds:</p>
+
+<ul>
+  <li><strong>A single, clean codebase.</strong> I build the mobile app in Flutter so one team ships iOS and Android from the same code, which is a huge multiplier on a 90-day timeline. If you want the deeper case for that, I wrote about it on my <a href="/services/flutter-app-development/">Flutter app development</a> page.</li>
+  <li><strong>A real data model, not a placeholder.</strong> The schema is the hardest thing to change once you have users. I design it for where the product is going, not just the demo.</li>
+  <li><strong>A proper backend and pipeline from sprint one.</strong> Auth, a versioned API, staging and production environments, and automated deploys. This is the <a href="/services/backend-devops/">backend and DevOps</a> groundwork that lets Dispatch Pro absorb real-time traffic from thousands of concurrent drivers without falling over.</li>
+  <li><strong>Instrumentation baked in.</strong> Analytics and crash reporting from the first build, so launch day gives you data instead of guesses.</li>
+</ul>
+
+<p>That is the difference between how Qist Bazaar and Dispatch Pro handled growth versus a prototype that has to be rewritten. The MVP was lean, but the bones were production-grade.</p>
+
+<h2>What 90 days actually costs, and how to start</h2>
+
+<p>Budget and scope are two sides of the same coin. A tightly-scoped single-loop MVP is a very different number from a multi-role marketplace with payments and an admin panel, even on the same timeline. In my experience the honest range is wide, which is exactly why guessing is dangerous. If you want a grounded estimate for your specific idea, run it through my <a href="/app-cost-calculator/">app cost calculator</a> to get a ballpark in a couple of minutes.</p>
+
+<p>If you would rather talk through scope and whether 90 days is realistic for what you have in mind, that is the core of my <a href="/services/mvp-development/">MVP development</a> work, and you can <a href="/#contact">tell me about your project here</a>. I will give you a straight answer on what fits in the first version and what should wait.</p>
+
+<h2>The one thing to remember</h2>
+
+<p>Speed comes from subtraction, durability comes from architecture. Cut the feature list to a single core loop so you can move fast, and build that loop on a real foundation so you never have to start over. Do both, and 90 days is enough to launch something people use and keep using.</p></div>
+      <p class="post-services"><strong>Related services:</strong> <a href="/services/mvp-development/">MVP Development for Startups</a> · <a href="/services/flutter-app-development/">Flutter App Development</a> · <a href="/services/backend-devops/">Backend &amp; DevOps</a></p>
+    </div></div>
+    <section class="content" style="padding-top:0"><div class="wrap">
+      <div class="section-head"><h2>Frequently asked questions</h2></div>
+      <div class="faq"><details><summary>Can you really build a functional MVP in 90 days?</summary><p>Yes, if scope is cut to a single core loop and the team builds in two-week sprints against a fixed launch date. I shipped a working v1 of Dispatch Pro in nine weeks. The key is that an MVP proves one valuable user journey end to end, not a full product with features removed.</p></details><details><summary>How do I stop my MVP from needing a rebuild later?</summary><p>Spend the first sprint on architecture, not features. A clean codebase, a real data model, a versioned API, proper environments, and CI/CD from day one mean version two extends the MVP instead of replacing it. The rebuild trap is almost always an architecture shortcut taken in week one.</p></details><details><summary>What should I cut from an MVP to hit 90 days?</summary><p>Cut everything that does not serve the one core loop: multi-role permissions, wallets, full admin panels, secondary journeys, and localization. Park them on a v2 roadmap so nothing feels deleted. The one thing you never cut is craft and quality, since users judge trust by how the product feels.</p></details><details><summary>How much does it cost to build an MVP?</summary><p>It depends heavily on scope. A single-loop app is a very different number from a two-sided marketplace with payments and an admin panel, even on the same 90-day timeline. Run your idea through my app cost calculator for a grounded ballpark, or reach out to discuss scope directly.</p></details><details><summary>Why use Flutter for an MVP?</summary><p>Flutter lets one team ship iOS and Android from a single codebase, which is a major multiplier on a tight 90-day timeline. It also produces production-grade apps, so the MVP scales rather than being throwaway. Qist Bazaar and Dispatch Pro were both built this way and handled real traction without a rewrite.</p></details></div>
+    </div></section>
+    </article>
+    <section class="related"><div class="wrap">
+    <div class="section-head"><h2>Proof from my work</h2></div>
+    <ul class="card-grid"><li class="card">
+      <span class="c-eyebrow">Fintech · Buy Now Pay Later</span>
+      <h3><a href="/projects/qist-bazaar/">Qist Bazaar</a></h3>
+      <p>Buy-now-pay-later fintech platform, built from scratch.</p>
+      <span class="c-go">Case study &#8594;</span>
+    </li><li class="card">
+      <span class="c-eyebrow">Logistics &amp; Ride Dispatch</span>
+      <h3><a href="/projects/dispatch-pro/">Dispatch Pro</a></h3>
+      <p>Real-time logistics &amp; ride-dispatch super-app.</p>
+      <span class="c-go">Case study &#8594;</span>
+    </li></ul>
+  </div></section>
+    <section class="cta"><div class="wrap">
+    <h2>Ready to build?</h2>
+    <p>Get an instant estimate with the app cost calculator, or book a discovery call.</p>
+    <div class="btn-row">
+      <a class="btn" href="/#contact">Start a project</a>
+      <a class="btn ghost" href="mailto:maazzindani2003@gmail.com">Email me &#8599;</a>
+    </div>
+  </div></section>
+  </main>
+  <footer class="site-foot"><div class="site-foot-inner">
+    <div class="foot-links">
+      <a href="/">Home</a>
+      <a href="/projects/">Projects</a>
+      <a href="/services/">Services</a>
+      <a href="/blog/">Blog</a>
+      <a href="/app-cost-calculator/">App Cost Calculator</a>
+      <a href="/about/">About</a>
+      <a href="https://github.com/muhammedmuaz" target="_blank" rel="noopener">GitHub &#8599;</a>
+      <a href="https://www.linkedin.com/in/maazzindani/" target="_blank" rel="noopener">LinkedIn &#8599;</a>
+      <a href="mailto:maazzindani2003@gmail.com">Email &#8599;</a>
+    </div>
+    <p class="foot-copy">&copy; 2026 Maaz Zindani &mdash; Karachi, Pakistan</p>
+  </div></footer>
+  
+</body>
+</html>

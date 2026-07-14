@@ -55,6 +55,8 @@
 - Home: https://www.maazzindani.com/
 - Projects: https://www.maazzindani.com/projects/
 - Services: https://www.maazzindani.com/services/
+- Blog: https://www.maazzindani.com/blog/
+- App Cost Calculator: https://www.maazzindani.com/app-cost-calculator/
 - About: https://www.maazzindani.com/about/
 
 ### Project case studies
@@ -89,3 +91,11 @@
 - Backend & DevOps: https://www.maazzindani.com/services/backend-devops/
 - AI Integration for Apps: https://www.maazzindani.com/services/ai-integration/
 - App Modernization & Migration: https://www.maazzindani.com/services/app-modernization/
+
+### Articles
+
+- How Much Does It Cost to Build a Mobile App in 2026?: https://www.maazzindani.com/blog/how-much-does-it-cost-to-build-a-mobile-app/
+- Flutter vs React Native in 2026: Which Should You Choose?: https://www.maazzindani.com/blog/flutter-vs-react-native/
+- How to Build an MVP in 90 Days (Without a Rebuild Later): https://www.maazzindani.com/blog/how-to-build-an-mvp-in-90-days/
+- Hire a Flutter Developer in Pakistan: Rates, Process & What to Expect: https://www.maazzindani.com/blog/hire-flutter-developer-pakistan/
+- BNPL App Development: How to Build a Buy-Now-Pay-Later App: https://www.maazzindani.com/blog/bnpl-app-development-guide/

@@ -70,6 +70,11 @@ img { max-width: 100%; display: block; }
   color: var(--cream-dim); transition: color 0.25s;
 }
 .nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--emerald); }
+.nav-links a.nav-cta {
+  color: var(--emerald); border: 1px solid var(--emerald-dim);
+  border-radius: 999px; padding: 4px 12px;
+}
+.nav-links a.nav-cta:hover { background: var(--emerald); color: var(--ink); }
 
 /* ---------------- breadcrumb ---------------- */
 .crumbs { padding-top: 34px; font-size: 12px; letter-spacing: 0.1em; color: var(--cream-dim); }
@@ -174,6 +179,31 @@ img { max-width: 100%; display: block; }
 
 /* related block */
 .related { border-top: 1px solid var(--cream-faint); }
+
+/* ---------------- blog post ---------------- */
+.post-meta { margin-top: 16px; font-size: 13px; letter-spacing: 0.08em; color: var(--emerald); text-transform: uppercase; }
+.post-body { max-width: 760px; }
+.post-body p { color: var(--cream-dim); font-size: clamp(16px, 1.3vw, 18px); margin: 0 0 18px; }
+.post-body h2 {
+  font-family: var(--display); font-weight: 400;
+  font-size: clamp(26px, 3.2vw, 40px); text-transform: uppercase; line-height: 1.05;
+  margin: 40px 0 16px;
+}
+.post-body h3 { font-size: clamp(19px, 1.8vw, 24px); margin: 28px 0 12px; color: var(--cream); font-weight: 600; }
+.post-body ul, .post-body ol { margin: 0 0 18px 22px; color: var(--cream-dim); }
+.post-body li { margin-bottom: 8px; font-size: clamp(16px, 1.3vw, 18px); }
+.post-body a { color: var(--emerald); border-bottom: 1px solid var(--emerald-dim); }
+.post-body a:hover { border-color: var(--emerald); }
+.post-body strong { color: var(--cream); }
+.post-body table {
+  width: 100%; border-collapse: collapse; margin: 0 0 24px;
+  font-size: clamp(14px, 1.2vw, 16px); display: block; overflow-x: auto;
+}
+.post-body th, .post-body td { border: 1px solid var(--cream-faint); padding: 12px 14px; text-align: left; vertical-align: top; }
+.post-body th { color: var(--emerald); font-weight: 600; letter-spacing: 0.04em; }
+.post-body td { color: var(--cream-dim); }
+.post-services { max-width: 760px; margin-top: 8px; font-size: 14px; color: var(--cream-dim); }
+.post-services a { color: var(--emerald); }
 
 /* ---------------- CTA ---------------- */
 .cta {

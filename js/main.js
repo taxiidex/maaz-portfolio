@@ -8,8 +8,11 @@
 
   /* ---------------- site config (swap these freely) ---------------- */
   const SITE = window.SITE_CONFIG = {
-    // Formspree-style endpoint or your Laravel `POST /api/contact`
-    contactEndpoint: 'https://formspree.io/f/YOUR_FORM_ID',
+    // FormSubmit.co — no account needed; leads are emailed straight to the
+    // inbox below. IMPORTANT: the FIRST submission triggers a one-time
+    // activation email from FormSubmit — click its link once to go live.
+    // To switch to Formspree/Web3Forms/Laravel later, just replace this URL.
+    contactEndpoint: 'https://formsubmit.co/ajax/maazzindani2003@gmail.com',
     availability: 'AVAILABLE FOR NEW PROJECTS',
   };
 

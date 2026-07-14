@@ -4,17 +4,19 @@
    Run: node build/generate.mjs
    ================================================================ */
 
-import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const read = (p) => JSON.parse(readFileSync(join(ROOT, p), 'utf8'));
+const readOpt = (p, fallback) => existsSync(join(ROOT, p)) ? read(p) : fallback;
 
 const SITE = read('data/site.json');
 const PROJECTS = read('data/projects.json');
 const SERVICES = read('data/services.json');
-const CSS_V = 'v=1';
+const POSTS = readOpt('data/posts.json', []);
+const CSS_V = 'v=2';
 const TODAY = new Date().toISOString().slice(0, 10);
 
 const bySlug = Object.fromEntries(PROJECTS.map((p) => [p.slug, p]));
@@ -59,12 +61,15 @@ function nav(current) {
   const links = [
     ['/projects/', 'Projects'],
     ['/services/', 'Services'],
+    ['/blog/', 'Blog'],
+    ['/app-cost-calculator/', 'App Cost'],
     ['/about/', 'About'],
     ['/#contact', 'Contact'],
   ];
   const items = links.map(([href, label]) => {
     const cur = href === current ? ' aria-current="page"' : '';
-    return `<a href="${href}"${cur}>${label}</a>`;
+    const accent = href === '/app-cost-calculator/' ? ' class="nav-cta"' : '';
+    return `<a href="${href}"${cur}${accent}>${label}</a>`;
   }).join('');
   return `<header class="site-nav"><div class="site-nav-inner">
     <a class="nav-brand" href="/">MZ<span>&copy;</span></a>
@@ -78,6 +83,8 @@ function footer() {
       <a href="/">Home</a>
       <a href="/projects/">Projects</a>
       <a href="/services/">Services</a>
+      <a href="/blog/">Blog</a>
+      <a href="/app-cost-calculator/">App Cost Calculator</a>
       <a href="/about/">About</a>
       <a href="${SITE.socials.github}" target="_blank" rel="noopener">GitHub &#8599;</a>
       <a href="${SITE.socials.linkedin}" target="_blank" rel="noopener">LinkedIn &#8599;</a>
@@ -98,7 +105,7 @@ function ctaBlock(heading, sub) {
   </div></section>`;
 }
 
-function layout({ path, title, description, ogType = 'website', bodyHtml, ld = [] }) {
+function layout({ path, title, description, ogType = 'website', bodyHtml, ld = [], extraHead = '', bodyEnd = '' }) {
   const canonical = abs(path);
   const ldTags = ld.map(jsonldScript).join('\n  ');
   return `<!DOCTYPE html>
@@ -129,6 +136,7 @@ function layout({ path, title, description, ogType = 'website', bodyHtml, ld = [
   <link rel="preload" href="/fonts/anton-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/css/pages.css?${CSS_V}" />
+  ${extraHead}
   ${ldTags}
 </head>
 <body>
@@ -137,6 +145,7 @@ function layout({ path, title, description, ogType = 'website', bodyHtml, ld = [
 ${bodyHtml}
   </main>
   ${footer()}
+  ${bodyEnd}
 </body>
 </html>
 `;
@@ -448,6 +457,227 @@ function renderAbout() {
   }));
 }
 
+/* ---------------- blog ---------------- */
+const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+function fmtDate(iso) {
+  const [y, m, d] = String(iso).split('-');
+  return `${+d} ${MONTHS[+m - 1]} ${y}`;
+}
+
+function renderPost(post) {
+  const path = `/blog/${post.slug}/`;
+  const crumbs = [
+    { name: 'Home', path: '/' },
+    { name: 'Blog', path: '/blog/' },
+    { name: post.title, path },
+  ];
+  const faqHtml = (post.faq || []).map((f) =>
+    `<details><summary>${esc(f.q)}</summary><p>${esc(f.a)}</p></details>`).join('');
+  const svcLinks = (post.relatedServices || []).map((slug) => {
+    const s = SERVICES.find((x) => x.slug === slug);
+    return s ? `<a href="/services/${s.slug}/">${esc(s.title)}</a>` : '';
+  }).filter(Boolean).join(' · ');
+
+  const body = `${crumbHtml(crumbs).replace('class="crumbs"', 'class="crumbs wrap"')}
+    <article>
+    <header class="page-hero"><div class="wrap">
+      <p class="eyebrow">Article</p>
+      <h1>${esc(post.title)}</h1>
+      <p class="post-meta">${fmtDate(post.date)} · ${post.readMins} min read${
+        post.tags && post.tags.length ? ' · ' + post.tags.map(esc).join(', ') : ''}</p>
+      <p class="page-lead">${esc(post.excerpt)}</p>
+    </div></header>
+    <div class="content"><div class="wrap">
+      <div class="post-body">${post.bodyHtml}</div>
+      ${svcLinks ? `<p class="post-services"><strong>Related services:</strong> ${svcLinks}</p>` : ''}
+    </div></div>
+    ${faqHtml ? `<section class="content" style="padding-top:0"><div class="wrap">
+      <div class="section-head"><h2>Frequently asked questions</h2></div>
+      <div class="faq">${faqHtml}</div>
+    </div></section>` : ''}
+    </article>
+    ${relatedCards(post.relatedProjects || [], 'Proof from my work')}
+    ${ctaBlock('Ready to build?', 'Get an instant estimate with the app cost calculator, or book a discovery call.')}`;
+
+  const ld = [
+    {
+      '@context': 'https://schema.org', '@type': 'BlogPosting',
+      headline: post.title, description: post.metaDescription,
+      datePublished: post.date, dateModified: post.date,
+      author: { '@id': SITE.personId }, publisher: { '@id': SITE.personId },
+      image: SITE.ogImage, mainEntityOfPage: abs(path),
+      keywords: (post.keywords || []).join(', '),
+    },
+    breadcrumbLd(crumbs),
+  ];
+  if (post.faq && post.faq.length) {
+    ld.push({
+      '@context': 'https://schema.org', '@type': 'FAQPage',
+      mainEntity: post.faq.map((f) => ({
+        '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
+    });
+  }
+  return write(`blog/${post.slug}/index.html`, layout({
+    path, title: post.metaTitle, description: post.metaDescription, ogType: 'article',
+    bodyHtml: body, ld,
+  }));
+}
+
+function renderBlogIndex() {
+  const path = '/blog/';
+  const crumbs = [{ name: 'Home', path: '/' }, { name: 'Blog', path }];
+  const cards = POSTS.map((p) => `<li class="card">
+      <span class="c-eyebrow">${fmtDate(p.date)} · ${p.readMins} min</span>
+      <h3><a href="/blog/${p.slug}/">${esc(p.title)}</a></h3>
+      <p>${esc(p.excerpt)}</p>
+      <span class="c-go">Read &#8594;</span>
+    </li>`).join('');
+
+  const body = `${crumbHtml(crumbs).replace('class="crumbs"', 'class="crumbs wrap"')}
+    <section class="page-hero"><div class="wrap">
+      <p class="eyebrow">Insights</p>
+      <h1>Blog</h1>
+      <p class="page-lead">Practical guides on mobile app development, costs, MVPs and shipping products that scale &mdash; written from the trenches.</p>
+    </div></section>
+    <section class="content"><div class="wrap">
+      <ul class="card-grid">${cards}</ul>
+    </div></section>
+    ${ctaBlock('Have a project in mind?', 'Get an instant estimate, or book a discovery call.')}`;
+
+  const ld = [
+    { '@context': 'https://schema.org', '@type': 'Blog', name: 'Maaz Zindani — Blog', url: abs(path), description: 'Guides on mobile app development, cost, MVPs and Flutter.' },
+    {
+      '@context': 'https://schema.org', '@type': 'ItemList',
+      itemListElement: POSTS.map((p, i) => ({ '@type': 'ListItem', position: i + 1, url: abs(`/blog/${p.slug}/`), name: p.title })),
+    },
+    breadcrumbLd(crumbs),
+  ];
+  return write('blog/index.html', layout({
+    path, title: 'Blog — App Development Guides | Maaz Zindani',
+    description: 'Practical guides on mobile app development cost, MVPs, Flutter vs React Native, and shipping apps that scale — by Maaz Zindani.',
+    bodyHtml: body, ld,
+  }));
+}
+
+/* ---------------- app cost calculator ---------------- */
+function renderCalculator() {
+  const path = '/app-cost-calculator/';
+  const crumbs = [{ name: 'Home', path: '/' }, { name: 'App Cost Calculator', path }];
+  const radio = (name, opts) => opts.map((o, i) =>
+    `<label class="opt"><input type="radio" name="${name}" value="${o.v}"${i === 0 ? ' checked' : ''}><span>${esc(o.l)}</span></label>`).join('');
+  const check = (opts) => opts.map((o) =>
+    `<label class="opt"><input type="checkbox" name="feature" value="${o.v}"><span>${esc(o.l)}</span></label>`).join('');
+
+  const body = `${crumbHtml(crumbs).replace('class="crumbs"', 'class="crumbs wrap"')}
+    <section class="page-hero"><div class="wrap">
+      <p class="eyebrow">Free tool</p>
+      <h1>App Cost Calculator</h1>
+      <p class="page-lead">Answer five quick questions and get an instant, indicative estimate for your mobile app &mdash; then send me the scope for a precise quote.</p>
+    </div></section>
+    <section class="content"><div class="wrap">
+      <div class="calc-layout">
+      <form class="calc" id="calc" novalidate>
+        <fieldset class="calc-group"><legend>1. Platforms</legend>
+          ${radio('platform', [{ v: 'both', l: 'iOS + Android (cross-platform)' }, { v: 'ios', l: 'iOS only' }, { v: 'android', l: 'Android only' }])}
+        </fieldset>
+        <fieldset class="calc-group"><legend>2. App type</legend>
+          ${radio('apptype', [{ v: 'simple', l: 'Simple / content app' }, { v: 'marketplace', l: 'Marketplace / on-demand' }, { v: 'social', l: 'Social / streaming' }, { v: 'fintech', l: 'Fintech / enterprise' }])}
+        </fieldset>
+        <fieldset class="calc-group"><legend>3. Features</legend>
+          ${check([
+            { v: 'auth', l: 'Accounts & profiles' }, { v: 'payments', l: 'Payments' },
+            { v: 'realtime', l: 'Real-time (chat / tracking)' }, { v: 'maps', l: 'Maps / geolocation' },
+            { v: 'admin', l: 'Admin dashboard' }, { v: 'push', l: 'Push notifications' },
+            { v: 'ai', l: 'AI features' }, { v: 'integrations', l: 'Third-party integrations' },
+          ])}
+        </fieldset>
+        <fieldset class="calc-group"><legend>4. Design</legend>
+          ${radio('design', [{ v: 'custom', l: 'Custom (standard polish)' }, { v: 'template', l: 'Template / minimal' }, { v: 'premium', l: 'Premium (bespoke, animated)' }])}
+        </fieldset>
+        <fieldset class="calc-group"><legend>5. Backend</legend>
+          ${radio('backend', [{ v: 'baas', l: 'Managed / Firebase' }, { v: 'custom', l: 'Custom backend' }, { v: 'scale', l: 'Custom + DevOps at scale' }])}
+        </fieldset>
+      </form>
+      <aside class="calc-result" id="calc-result" aria-live="polite">
+        <p class="cr-label">Indicative estimate</p>
+        <p class="cr-range" id="cr-range">&mdash;</p>
+        <p class="cr-time" id="cr-time"></p>
+        <p class="cr-note">A rough, indicative range only &mdash; your exact quote comes after a short discovery call.</p>
+        <div class="btn-row">
+          <a class="btn" id="cr-email" href="#">Email me this scope &#8599;</a>
+          <a class="btn ghost" href="/#contact">Book a discovery call</a>
+        </div>
+      </aside>
+      </div>
+    </div></section>
+    ${ctaBlock('Prefer to just talk it through?', 'Tell me about your app &mdash; discovery call within 48 hours.')}`;
+
+  const extraHead = `<style>
+    .calc-layout { display:grid; grid-template-columns:1fr; gap:24px; align-items:start; }
+    @media(min-width:900px){ .calc-layout{ grid-template-columns:minmax(0,1fr) 340px; } }
+    .calc { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:16px; }
+    .calc-group { border:1px solid var(--cream-faint); padding:18px 20px; }
+    .calc-group legend { font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--emerald); padding:0 8px; }
+    .opt { display:flex; align-items:center; gap:10px; padding:8px 0; cursor:pointer; font-size:15px; color:var(--cream); }
+    .opt input { accent-color:var(--emerald); width:17px; height:17px; }
+    .calc-result { border:1px solid var(--emerald-dim); background:rgba(10,16,13,.6); padding:clamp(24px,3vw,32px); }
+    @media(min-width:900px){ .calc-result{ position:sticky; top:96px; } }
+    .cr-label { font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--cream-dim); }
+    .cr-range { font-family:var(--display); font-size:clamp(40px,7vw,72px); line-height:1; color:var(--cream); margin-top:6px; }
+    .cr-range span { color:var(--emerald); }
+    .cr-time { font-size:15px; color:var(--emerald); margin-top:6px; letter-spacing:.04em; }
+    .cr-note { font-size:13px; color:var(--cream-dim); margin-top:14px; max-width:460px; }
+  </style>`;
+
+  const bodyEnd = `<script>
+  (function(){
+    var base={simple:6000,marketplace:18000,social:22000,fintech:30000};
+    var plat={both:1.0,ios:0.85,android:0.85};
+    var feat={auth:1500,payments:3000,realtime:4000,maps:2000,admin:4000,push:800,ai:5000,integrations:2500};
+    var des={custom:1.0,template:0.9,premium:1.25};
+    var back={baas:0,custom:5000,scale:12000};
+    var form=document.getElementById('calc');
+    var rangeEl=document.getElementById('cr-range');
+    var timeEl=document.getElementById('cr-time');
+    var emailEl=document.getElementById('cr-email');
+    function val(n){var el=form.querySelector('input[name="'+n+'"]:checked');return el?el.value:null;}
+    function feats(){return Array.prototype.map.call(form.querySelectorAll('input[name="feature"]:checked'),function(e){return e.value;});}
+    function round500(x){return Math.round(x/500)*500;}
+    function fmt(n){return '$'+n.toLocaleString('en-US');}
+    function compute(){
+      var t=val('apptype'), p=val('platform'), d=val('design'), b=val('backend'), fs=feats();
+      var sum=fs.reduce(function(a,k){return a+(feat[k]||0);},0);
+      var total=(base[t]*plat[p]+sum+back[b])*des[d];
+      var low=round500(total*0.8), high=round500(total*1.2);
+      var weeks=Math.max(4,Math.min(40,Math.round(total/1300)));
+      rangeEl.innerHTML='<span>'+fmt(low)+'</span> – <span>'+fmt(high)+'</span>';
+      timeEl.textContent='Estimated timeline: ~'+weeks+' weeks';
+      var lines=['App estimate request','','Platforms: '+t,'App type: '+t,'Features: '+(fs.join(', ')||'none selected'),'Design: '+d,'Backend: '+b,'','Indicative estimate: '+fmt(low)+' - '+fmt(high),'Estimated timeline: ~'+weeks+' weeks','','My project:'];
+      emailEl.href='mailto:${SITE.email}?subject='+encodeURIComponent('App estimate — '+t+' ('+fmt(low)+'-'+fmt(high)+')')+'&body='+encodeURIComponent(lines.join('\\n'));
+    }
+    form.addEventListener('change',compute); compute();
+  })();
+  </script>`;
+
+  const ld = [
+    {
+      '@context': 'https://schema.org', '@type': 'WebApplication',
+      name: 'App Cost Calculator', url: abs(path),
+      applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
+      description: 'Free interactive tool to estimate the cost of building a mobile app.',
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+      author: { '@id': SITE.personId },
+    },
+    breadcrumbLd(crumbs),
+  ];
+  return write('app-cost-calculator/index.html', layout({
+    path, title: 'App Cost Calculator — Estimate Your App | Maaz Zindani',
+    description: 'Free app cost calculator — get an instant, indicative estimate for building your iOS and Android app in 2026, then send the scope for a precise quote.',
+    bodyHtml: body, ld, extraHead, bodyEnd,
+  }));
+}
+
 /* ---------------- sitemap + llms ---------------- */
 function renderSitemap(paths) {
   const urls = paths.map((p) => {
@@ -463,9 +693,10 @@ function updateLlms() {
   const marker = '## Pages';
   const idx = txt.indexOf(marker);
   if (idx !== -1) txt = txt.slice(0, idx).trimEnd() + '\n\n';
-  let block = `## Pages\n\n- Home: ${abs('/')}\n- Projects: ${abs('/projects/')}\n- Services: ${abs('/services/')}\n- About: ${abs('/about/')}\n\n### Project case studies\n\n`;
+  let block = `## Pages\n\n- Home: ${abs('/')}\n- Projects: ${abs('/projects/')}\n- Services: ${abs('/services/')}\n- Blog: ${abs('/blog/')}\n- App Cost Calculator: ${abs('/app-cost-calculator/')}\n- About: ${abs('/about/')}\n\n### Project case studies\n\n`;
   block += PROJECTS.map((p) => `- ${p.title} (${p.category}): ${abs(`/projects/${p.slug}/`)}`).join('\n') + '\n\n';
   block += `### Services\n\n` + SERVICES.map((s) => `- ${s.title}: ${abs(`/services/${s.slug}/`)}`).join('\n') + '\n';
+  if (POSTS.length) block += `\n### Articles\n\n` + POSTS.map((p) => `- ${p.title}: ${abs(`/blog/${p.slug}/`)}`).join('\n') + '\n';
   writeFileSync(join(ROOT, 'llms.txt'), txt.trimEnd() + '\n\n' + block);
 }
 
@@ -476,12 +707,18 @@ PROJECTS.forEach((p) => written.push(renderProject(p)));
 written.push(renderServicesIndex());
 SERVICES.forEach((s) => written.push(renderService(s)));
 written.push(renderAbout());
+written.push(renderCalculator());
+if (POSTS.length) {
+  written.push(renderBlogIndex());
+  POSTS.forEach((p) => written.push(renderPost(p)));
+}
 
 const sitemapPaths = [
-  '/', '/projects/', '/services/', '/about/',
+  '/', '/projects/', '/services/', '/blog/', '/about/', '/app-cost-calculator/',
   ...PROJECTS.map((p) => `/projects/${p.slug}/`),
   ...SERVICES.map((s) => `/services/${s.slug}/`),
-];
+  ...POSTS.map((p) => `/blog/${p.slug}/`),
+].filter((p, i, a) => (POSTS.length || p !== '/blog/') && a.indexOf(p) === i);
 written.push(renderSitemap(sitemapPaths));
 updateLlms();
 
