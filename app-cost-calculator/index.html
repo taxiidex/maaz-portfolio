@@ -28,20 +28,52 @@
   <link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/css/pages.css?v=3" />
   <style>
+    .region-bar { margin-bottom:26px; }
+    .region-label { font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--cream-dim); margin-bottom:12px; }
+    #region-note { color:var(--emerald); text-transform:none; letter-spacing:.04em; }
+    .region-pills { display:flex; flex-wrap:wrap; gap:8px; }
+    .rpill input { position:absolute; opacity:0; pointer-events:none; }
+    .rpill span {
+      display:inline-block; cursor:pointer;
+      font-size:12px; letter-spacing:.12em; text-transform:uppercase;
+      color:var(--cream-dim); border:1px solid var(--cream-faint); border-radius:999px;
+      padding:9px 16px; transition:color .25s,border-color .25s,background .25s,transform .2s;
+    }
+    .rpill span:hover { border-color:var(--emerald-dim); color:var(--cream); }
+    .rpill input:checked + span { background:var(--emerald); border-color:var(--emerald); color:var(--ink); font-weight:600; }
+    .rpill input:focus-visible + span { outline:2px solid var(--emerald); outline-offset:3px; }
+
     .calc-layout { display:grid; grid-template-columns:1fr; gap:24px; align-items:start; }
-    @media(min-width:900px){ .calc-layout{ grid-template-columns:minmax(0,1fr) 340px; } }
+    @media(min-width:900px){ .calc-layout{ grid-template-columns:minmax(0,1fr) 360px; } }
     .calc { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:16px; }
     .calc-group { border:1px solid var(--cream-faint); padding:18px 20px; }
     .calc-group legend { font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--emerald); padding:0 8px; }
     .opt { display:flex; align-items:center; gap:10px; padding:8px 0; cursor:pointer; font-size:15px; color:var(--cream); }
     .opt input { accent-color:var(--emerald); width:17px; height:17px; }
+
     .calc-result { border:1px solid var(--emerald-dim); background:rgba(10,16,13,.6); padding:clamp(24px,3vw,32px); }
     @media(min-width:900px){ .calc-result{ position:sticky; top:96px; } }
-    .cr-label { font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--cream-dim); }
-    .cr-range { font-family:var(--display); font-size:clamp(40px,7vw,72px); line-height:1; color:var(--cream); margin-top:6px; }
+    .cr-label { font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:var(--cream-dim); }
+    .cr-label.accent { color:var(--emerald); }
+    .cr-market { font-family:var(--display); font-size:clamp(20px,2.4vw,28px); color:var(--cream-dim); margin-top:4px; text-decoration:line-through; text-decoration-color:rgba(245,240,232,.35); text-decoration-thickness:2px; }
+    .cr-divider { height:1px; background:var(--cream-faint); margin:16px 0 14px; }
+    .cr-range { font-family:var(--display); font-size:clamp(38px,6vw,60px); line-height:1; color:var(--cream); margin-top:6px; }
     .cr-range span { color:var(--emerald); }
-    .cr-time { font-size:15px; color:var(--emerald); margin-top:6px; letter-spacing:.04em; }
+    .cr-pkr { font-size:14px; color:var(--cream-dim); margin-top:8px; letter-spacing:.04em; }
+    .cr-time { font-size:15px; color:var(--emerald); margin-top:8px; letter-spacing:.04em; }
     .cr-note { font-size:13px; color:var(--cream-dim); margin-top:14px; max-width:460px; }
+
+    .bench-sub { color:var(--cream-dim); max-width:640px; margin:14px 0 24px; }
+    .bench-tablewrap { overflow-x:auto; }
+    .bench-table { width:100%; border-collapse:collapse; font-size:clamp(13px,1.2vw,16px); }
+    .bench-table th, .bench-table td { border:1px solid var(--cream-faint); padding:13px 16px; text-align:left; white-space:nowrap; }
+    .bench-table th { color:var(--emerald); letter-spacing:.06em; }
+    .bench-table td { color:var(--cream-dim); }
+    .bench-table tr.is-you td { color:var(--cream); background:rgba(16,185,129,.07); }
+    .bench-note { color:var(--cream-dim); max-width:680px; margin-top:18px; font-size:15px; }
+    .bench-note em { color:var(--emerald); font-style:normal; }
+
+    @media (prefers-reduced-motion: reduce) { [data-an]{ opacity:1 !important; transform:none !important; } }
   </style>
   <script type="application/ld+json">
 {
@@ -94,11 +126,15 @@
   <main>
 <nav class="crumbs wrap" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li>App Cost Calculator</li></ol></nav>
     <section class="page-hero"><div class="wrap">
-      <p class="eyebrow">Free tool</p>
-      <h1>App Cost Calculator</h1>
-      <p class="page-lead">Answer five quick questions and get an instant, indicative estimate for your mobile app &mdash; then send me the scope for a precise quote.</p>
+      <p class="eyebrow" data-an="fade">Free tool</p>
+      <h1 data-an="rise">App Cost Calculator</h1>
+      <p class="page-lead" data-an="rise">Answer five quick questions and get an instant estimate calibrated to <em>your region&#39;s market</em> &mdash; then send me the scope for a precise quote.</p>
     </div></section>
     <section class="content"><div class="wrap">
+      <div class="region-bar" data-an="rise">
+        <p class="region-label">Your market: <span id="region-note">auto-detected from your device &mdash; tap to change</span></p>
+        <div class="region-pills" id="region-pills"><label class="rpill"><input type="radio" name="region" value="us"><span>North America</span></label><label class="rpill"><input type="radio" name="region" value="weu"><span>Western Europe</span></label><label class="rpill"><input type="radio" name="region" value="eeu"><span>Eastern Europe</span></label><label class="rpill"><input type="radio" name="region" value="me"><span>Middle East</span></label><label class="rpill"><input type="radio" name="region" value="in"><span>India</span></label><label class="rpill"><input type="radio" name="region" value="pk"><span>Pakistan</span></label><label class="rpill"><input type="radio" name="region" value="global" checked><span>Global</span></label></div>
+      </div>
       <div class="calc-layout">
       <form class="calc" id="calc" novalidate>
         <fieldset class="calc-group"><legend>1. Platforms</legend>
@@ -118,16 +154,38 @@
         </fieldset>
       </form>
       <aside class="calc-result" id="calc-result" aria-live="polite">
-        <p class="cr-label">Indicative estimate</p>
+        <p class="cr-label">Typical <span id="cr-region">global</span> agency range</p>
+        <p class="cr-market" id="cr-market">&mdash;</p>
+        <div class="cr-divider"></div>
+        <p class="cr-label accent">My estimate &mdash; ~50% below that market</p>
         <p class="cr-range" id="cr-range">&mdash;</p>
+        <p class="cr-pkr" id="cr-pkr" hidden></p>
         <p class="cr-time" id="cr-time"></p>
-        <p class="cr-note">A rough, indicative range only &mdash; your exact quote comes after a short discovery call.</p>
+        <p class="cr-note">Indicative only, based on 2026 market benchmarks and an effort model &mdash; your exact quote comes after a short discovery call.</p>
         <div class="btn-row">
           <a class="btn" id="cr-email" href="#">Email me this scope &#8599;</a>
           <a class="btn ghost" href="/#contact">Book a discovery call</a>
         </div>
       </aside>
       </div>
+    </div></section>
+    <section class="content bench" style="padding-top:0"><div class="wrap">
+      <div class="section-head"><h2 data-an="rise">2026 global benchmarks</h2></div>
+      <p class="bench-sub" data-an="rise">What app development typically costs across markets &mdash; and why working with me lands well under these numbers.</p>
+      <div class="bench-tablewrap" data-an="rise">
+        <table class="bench-table">
+          <thead><tr><th>Region</th><th>Typical hourly rate</th><th>Basic app</th><th>Complex / enterprise</th></tr></thead>
+          <tbody>
+            <tr><td>North America</td><td>$100 &ndash; $250</td><td>$40,000+</td><td>$150,000 &ndash; $500,000+</td></tr>
+            <tr><td>Western Europe</td><td>$80 &ndash; $180</td><td>$60,000+</td><td>$150,000 &ndash; $350,000+</td></tr>
+            <tr><td>Eastern Europe</td><td>$30 &ndash; $90</td><td>$25,000+</td><td>$100,000 &ndash; $250,000+</td></tr>
+            <tr><td>Middle East</td><td>$40 &ndash; $70</td><td>$40,000+</td><td>$100,000 &ndash; $300,000+</td></tr>
+            <tr><td>India</td><td>$15 &ndash; $50</td><td>$8,000+</td><td>$80,000 &ndash; $150,000+</td></tr>
+            <tr><td>Pakistan</td><td>$15 &ndash; $60</td><td>$1,800+</td><td>$18,000 &ndash; $54,000+</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="bench-note" data-an="rise">Indicative 2026 market averages. Because I build end to end from Karachi &mdash; senior, Meta-certified engineering without agency overhead &mdash; my estimates typically land around <em>half</em> of your local market&#39;s going rate.</p>
     </div></section>
     <section class="cta"><div class="wrap">
     <h2>Prefer to just talk it through?</h2>
@@ -152,33 +210,150 @@
     </div>
     <p class="foot-copy">&copy; 2026 Maaz Zindani &mdash; Karachi, Pakistan</p>
   </div></footer>
+  <script src="/libs/gsap.min.js"></script>
+  <script src="/libs/ScrollTrigger.min.js"></script>
   <script>
   (function(){
-    var base={simple:6000,marketplace:18000,social:22000,fintech:30000};
+    'use strict';
+    /* ---- effort model (hours) ---- */
+    var baseH={simple:180,marketplace:450,social:550,fintech:750};
     var plat={both:1.0,ios:0.85,android:0.85};
-    var feat={auth:1500,payments:3000,realtime:4000,maps:2000,admin:4000,push:800,ai:5000,integrations:2500};
+    var featH={auth:40,payments:80,realtime:110,maps:60,admin:110,push:25,ai:130,integrations:70};
     var des={custom:1.0,template:0.9,premium:1.25};
-    var back={baas:0,custom:5000,scale:12000};
+    var backH={baas:0,custom:130,scale:320};
+
+    /* ---- 2026 regional benchmarks (USD/hr) ---- */
+    var REGIONS={
+      us:{name:'North America',lo:100,hi:250},
+      weu:{name:'Western Europe',lo:80,hi:180},
+      eeu:{name:'Eastern Europe',lo:30,hi:90},
+      me:{name:'Middle East',lo:40,hi:70},
+      'in':{name:'India',lo:15,hi:50},
+      pk:{name:'Pakistan',lo:15,hi:60,pkr:true},
+      global:{name:'global',lo:40,hi:120}
+    };
+    var PKR_RATE=278; // implied by 2026 benchmark data
+
+    /* ---- region auto-detect from timezone ---- */
+    function detectRegion(){
+      var tz='';
+      try{ tz=Intl.DateTimeFormat().resolvedOptions().timeZone||''; }catch(e){}
+      if(tz==='Asia/Karachi') return 'pk';
+      if(tz==='Asia/Kolkata'||tz==='Asia/Calcutta'||tz==='Asia/Colombo'||tz==='Asia/Dhaka') return 'in';
+      if(/^Asia\/(Dubai|Riyadh|Qatar|Bahrain|Kuwait|Muscat|Baghdad|Amman|Beirut)/.test(tz)||tz==='Africa/Cairo') return 'me';
+      if(/^Europe\/(London|Dublin|Paris|Berlin|Madrid|Rome|Amsterdam|Brussels|Zurich|Vienna|Stockholm|Oslo|Copenhagen|Lisbon|Helsinki|Luxembourg|Monaco)/.test(tz)) return 'weu';
+      if(/^Europe\//.test(tz)) return 'eeu';
+      if(/^(America|US|Canada)\//.test(tz)) return 'us';
+      if(/^(Australia|Pacific)\//.test(tz)) return 'weu';
+      return 'global';
+    }
+
     var form=document.getElementById('calc');
+    var pills=document.getElementById('region-pills');
+    var marketEl=document.getElementById('cr-market');
+    var regionEl=document.getElementById('cr-region');
     var rangeEl=document.getElementById('cr-range');
+    var pkrEl=document.getElementById('cr-pkr');
     var timeEl=document.getElementById('cr-time');
     var emailEl=document.getElementById('cr-email');
-    function val(n){var el=form.querySelector('input[name="'+n+'"]:checked');return el?el.value:null;}
-    function feats(){return Array.prototype.map.call(form.querySelectorAll('input[name="feature"]:checked'),function(e){return e.value;});}
-    function round500(x){return Math.round(x/500)*500;}
-    function fmt(n){return '$'+n.toLocaleString('en-US');}
-    function compute(){
-      var t=val('apptype'), p=val('platform'), d=val('design'), b=val('backend'), fs=feats();
-      var sum=fs.reduce(function(a,k){return a+(feat[k]||0);},0);
-      var total=(base[t]*plat[p]+sum+back[b])*des[d];
-      var low=round500(total*0.8), high=round500(total*1.2);
-      var weeks=Math.max(4,Math.min(40,Math.round(total/1300)));
-      rangeEl.innerHTML='<span>'+fmt(low)+'</span> – <span>'+fmt(high)+'</span>';
-      timeEl.textContent='Estimated timeline: ~'+weeks+' weeks';
-      var lines=['App estimate request','','Platforms: '+t,'App type: '+t,'Features: '+(fs.join(', ')||'none selected'),'Design: '+d,'Backend: '+b,'','Indicative estimate: '+fmt(low)+' - '+fmt(high),'Estimated timeline: ~'+weeks+' weeks','','My project:'];
-      emailEl.href='mailto:maazzindani2003@gmail.com?subject='+encodeURIComponent('App estimate — '+t+' ('+fmt(low)+'-'+fmt(high)+')')+'&body='+encodeURIComponent(lines.join('\n'));
+    var noteEl=document.getElementById('region-note');
+
+    function val(n){
+      var el=pills.querySelector('input[name="'+n+'"]:checked')||form.querySelector('input[name="'+n+'"]:checked');
+      return el?el.value:null;
     }
-    form.addEventListener('change',compute); compute();
+    function feats(){return Array.prototype.map.call(form.querySelectorAll('input[name="feature"]:checked'),function(e){return e.value;});}
+    function r(x){return x<10000?Math.round(x/100)*100:Math.round(x/500)*500;}
+    function fmt(n){return '$'+n.toLocaleString('en-US');}
+    function fmtPKR(n){return 'PKR '+(Math.round(n/10000)*10000).toLocaleString('en-US');}
+
+    var reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var hasGsap=typeof gsap!=='undefined'&&!reduced;
+
+    /* tweened display values */
+    var disp={mLo:0,mHi:0,lo:0,hi:0};
+    function paint(){
+      marketEl.textContent=fmt(r(disp.mLo))+' – '+fmt(r(disp.mHi));
+      rangeEl.innerHTML='<span>'+fmt(r(disp.lo))+'</span> – <span>'+fmt(r(disp.hi))+'</span>';
+    }
+
+    function compute(){
+      var t=val('apptype'),p=val('platform'),d=val('design'),b=val('backend'),reg=REGIONS[val('region')]||REGIONS.global,fs=feats();
+      var sumF=fs.reduce(function(a,k){return a+(featH[k]||0);},0);
+      var hours=Math.round((baseH[t]*plat[p]+sumF+backH[b])*des[d]);
+      var mLo=hours*reg.lo, mHi=hours*reg.hi;                 // typical market
+      var mid=hours*((reg.lo+reg.hi)/2)*0.5;                   // ~50% below market mid
+      var lo=mid*0.85, hi=mid*1.15;
+      var weeks=Math.max(4,Math.min(44,Math.round(hours/35)));
+
+      regionEl.textContent=reg.name;
+      // paint final values immediately (never depend on the tween — hidden
+      // tabs pause the ticker), then animate from the previous values
+      var from={mLo:disp.mLo,mHi:disp.mHi,lo:disp.lo,hi:disp.hi};
+      disp.mLo=mLo; disp.mHi=mHi; disp.lo=lo; disp.hi=hi;
+      paint();
+      if(hasGsap&&!document.hidden&&from.lo>0){
+        gsap.killTweensOf(disp);
+        gsap.fromTo(disp,from,{mLo:mLo,mHi:mHi,lo:lo,hi:hi,duration:.7,ease:'power2.out',onUpdate:paint,onComplete:paint});
+        gsap.fromTo('#calc-result',{boxShadow:'0 0 0 rgba(16,185,129,0)'},
+          {boxShadow:'0 0 34px rgba(16,185,129,.22)',duration:.35,yoyo:true,repeat:1,ease:'power1.inOut'});
+        gsap.fromTo(rangeEl,{scale:.97},{scale:1,duration:.4,ease:'back.out(2)'});
+      }
+
+      if(reg.pkr){ pkrEl.hidden=false; pkrEl.textContent='\u2248 '+fmtPKR(lo*PKR_RATE)+' – '+fmtPKR(hi*PKR_RATE); }
+      else pkrEl.hidden=true;
+      timeEl.textContent='~'+hours+' hours \u00b7 ~'+weeks+' weeks';
+
+      var lines=['App estimate request','','Region market: '+reg.name,'Platforms: '+p,'App type: '+t,
+        'Features: '+(fs.join(', ')||'none selected'),'Design: '+d,'Backend: '+b,'',
+        'Typical '+reg.name+' market: '+fmt(r(mLo))+' - '+fmt(r(mHi)),
+        'Estimate (~50% below market): '+fmt(r(lo))+' - '+fmt(r(hi)),
+        'Effort: ~'+hours+' hours (~'+weeks+' weeks)','','My project:'];
+      emailEl.href='mailto:maazzindani2003@gmail.com?subject='+encodeURIComponent('App estimate \u2014 '+t+' ('+fmt(r(lo))+'-'+fmt(r(hi))+')')+'&body='+encodeURIComponent(lines.join('\n'));
+    }
+
+    /* auto-select detected region */
+    var det=detectRegion();
+    var detInput=pills.querySelector('input[value="'+det+'"]');
+    if(detInput){ detInput.checked=true; }
+    if(noteEl&&det!=='global') noteEl.textContent='detected: '+REGIONS[det].name+' \u2014 tap to change';
+
+    form.addEventListener('change',compute);
+    pills.addEventListener('change',function(e){
+      compute();
+      if(hasGsap&&e.target&&e.target.nextElementSibling){
+        gsap.fromTo(e.target.nextElementSibling,{scale:.9},{scale:1,duration:.35,ease:'back.out(3)'});
+      }
+    });
+    compute();
+
+    /* ---- page choreography ---- */
+    if(hasGsap&&!document.hidden){
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.set('[data-an]',{opacity:0});
+      gsap.fromTo('[data-an="fade"]',{opacity:0},{opacity:1,duration:.8,ease:'power2.out'});
+      gsap.fromTo('.page-hero [data-an="rise"], .region-bar[data-an="rise"]',
+        {opacity:0,y:36},{opacity:1,y:0,duration:.9,stagger:.12,ease:'power3.out',delay:.1});
+      gsap.fromTo('.rpill',{opacity:0,y:14},{opacity:1,y:0,duration:.5,stagger:.05,ease:'power2.out',delay:.45});
+      gsap.fromTo('.calc-group',{opacity:0,y:34},
+        {opacity:1,y:0,duration:.7,stagger:.09,ease:'power3.out',
+         scrollTrigger:{trigger:'#calc',start:'top 85%',once:true}});
+      gsap.fromTo('#calc-result',{opacity:0,x:36},
+        {opacity:1,x:0,duration:.8,ease:'power3.out',
+         scrollTrigger:{trigger:'#calc-result',start:'top 88%',once:true}});
+      gsap.utils.toArray('.bench [data-an="rise"]').forEach(function(el){
+        gsap.fromTo(el,{opacity:0,y:30},{opacity:1,y:0,duration:.8,ease:'power3.out',
+          scrollTrigger:{trigger:el,start:'top 88%',once:true}});
+      });
+      gsap.fromTo('.bench-table tbody tr',{opacity:0,x:-18},
+        {opacity:1,x:0,duration:.5,stagger:.07,ease:'power2.out',
+         scrollTrigger:{trigger:'.bench-table',start:'top 85%',once:true}});
+      gsap.fromTo('.cta h2, .cta p, .cta .btn-row',{opacity:0,y:26},
+        {opacity:1,y:0,duration:.7,stagger:.1,ease:'power3.out',
+         scrollTrigger:{trigger:'.cta',start:'top 85%',once:true}});
+    } else {
+      document.querySelectorAll('[data-an]').forEach(function(el){el.style.opacity=1;});
+    }
   })();
   </script>
 </body>

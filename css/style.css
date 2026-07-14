@@ -1148,6 +1148,14 @@ em { font-style: normal; color: var(--emerald); }
   transform: translateY(-26px) scale(0.78);
   color: var(--emerald);
 }
+/* selects always display text ("SELECT…"), so their label must always
+   sit floated — otherwise the two overlap */
+.f-field.f-select label {
+  transform: translateY(-26px) scale(0.78);
+}
+.f-field.f-select:not(:focus-within):not(.has-value) label {
+  color: var(--cream-dim);
+}
 .f-line {
   position: absolute; left: 0; right: 0; bottom: 0;
   height: 1px; background: rgba(245, 240, 232, 0.38);
