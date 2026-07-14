@@ -616,7 +616,7 @@ function renderCalculator() {
         <p class="cr-label">Typical <span id="cr-region">global</span> agency range</p>
         <p class="cr-market" id="cr-market">&mdash;</p>
         <div class="cr-divider"></div>
-        <p class="cr-label accent">My estimate &mdash; ~50% below that market</p>
+        <p class="cr-label accent">My estimate &mdash; ~60% below that market</p>
         <p class="cr-range" id="cr-range">&mdash;</p>
         <p class="cr-pkr" id="cr-pkr" hidden></p>
         <p class="cr-time" id="cr-time"></p>
@@ -644,7 +644,7 @@ function renderCalculator() {
           </tbody>
         </table>
       </div>
-      <p class="bench-note" data-an="rise">Indicative 2026 market averages. Because I build end to end from Karachi &mdash; senior, Meta-certified engineering without agency overhead &mdash; my estimates typically land around <em>half</em> of your local market&#39;s going rate.</p>
+      <p class="bench-note" data-an="rise">Indicative 2026 market averages. Because I build end to end from Karachi &mdash; senior, Meta-certified engineering without agency overhead &mdash; my estimates typically land around <em>40% of your local market&#39;s going rate</em>.</p>
     </div></section>
     ${ctaBlock('Prefer to just talk it through?', 'Tell me about your app &mdash; discovery call within 48 hours.')}`;
 
@@ -769,7 +769,7 @@ function renderCalculator() {
       var sumF=fs.reduce(function(a,k){return a+(featH[k]||0);},0);
       var hours=Math.round((baseH[t]*plat[p]+sumF+backH[b])*des[d]);
       var mLo=hours*reg.lo, mHi=hours*reg.hi;                 // typical market
-      var mid=hours*((reg.lo+reg.hi)/2)*0.5;                   // ~50% below market mid
+      var mid=hours*((reg.lo+reg.hi)/2)*0.4;                   // ~60% below market mid
       var lo=mid*0.85, hi=mid*1.15;
       var weeks=Math.max(4,Math.min(44,Math.round(hours/35)));
 
@@ -794,7 +794,7 @@ function renderCalculator() {
       var lines=['App estimate request','','Region market: '+reg.name,'Platforms: '+p,'App type: '+t,
         'Features: '+(fs.join(', ')||'none selected'),'Design: '+d,'Backend: '+b,'',
         'Typical '+reg.name+' market: '+fmt(r(mLo))+' - '+fmt(r(mHi)),
-        'Estimate (~50% below market): '+fmt(r(lo))+' - '+fmt(r(hi)),
+        'Estimate (~60% below market): '+fmt(r(lo))+' - '+fmt(r(hi)),
         'Effort: ~'+hours+' hours (~'+weeks+' weeks)','','My project:'];
       emailEl.href='mailto:${SITE.email}?subject='+encodeURIComponent('App estimate \\u2014 '+t+' ('+fmt(r(lo))+'-'+fmt(r(hi))+')')+'&body='+encodeURIComponent(lines.join('\\n'));
     }
