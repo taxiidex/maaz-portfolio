@@ -62,8 +62,12 @@ img { max-width: 100%; display: block; }
   padding: 16px clamp(20px, 5vw, 40px);
   display: flex; align-items: center; justify-content: space-between; gap: 20px;
 }
-.nav-brand { font-family: var(--display); font-size: 22px; letter-spacing: 0.04em; color: #fff; }
-.nav-brand span { color: var(--emerald); font-size: 0.55em; vertical-align: super; }
+.nav-brand {
+  font-family: var(--display); font-size: 22px; letter-spacing: 0.04em; color: #fff;
+  display: inline-flex; align-items: center; gap: 10px;
+}
+.nav-brand img { display: block; border-radius: 7px; }
+.nav-brand sup { color: var(--emerald); font-size: 0.55em; }
 .nav-links { display: flex; gap: clamp(14px, 2.5vw, 30px); flex-wrap: wrap; }
 .nav-links a {
   font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase;

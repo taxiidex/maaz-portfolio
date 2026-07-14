@@ -16,7 +16,7 @@ const SITE = read('data/site.json');
 const PROJECTS = read('data/projects.json');
 const SERVICES = read('data/services.json');
 const POSTS = readOpt('data/posts.json', []);
-const CSS_V = 'v=2';
+const CSS_V = 'v=3';
 const TODAY = new Date().toISOString().slice(0, 10);
 
 const bySlug = Object.fromEntries(PROJECTS.map((p) => [p.slug, p]));
@@ -72,7 +72,10 @@ function nav(current) {
     return `<a href="${href}"${cur}${accent}>${label}</a>`;
   }).join('');
   return `<header class="site-nav"><div class="site-nav-inner">
-    <a class="nav-brand" href="/">MZ<span>&copy;</span></a>
+    <a class="nav-brand" href="/" aria-label="Maaz Zindani — home">
+      <img src="/assets/logo.svg?v=2" alt="" width="30" height="30" />
+      <span>MZ<sup>&copy;</sup></span>
+    </a>
     <nav class="nav-links" aria-label="Primary">${items}</nav>
   </div></header>`;
 }
@@ -131,8 +134,9 @@ function layout({ path, title, description, ogType = 'website', bodyHtml, ld = [
   <meta name="twitter:description" content="${esc(description)}" />
   <meta name="twitter:image" content="${SITE.ogImage}" />
   <meta name="theme-color" content="#0a0a0a" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
-  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="icon" type="image/svg+xml" href="/assets/logo.svg?v=2" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png?v=2" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=2" />
   <link rel="preload" href="/fonts/anton-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/css/pages.css?${CSS_V}" />

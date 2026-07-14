@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="MZ monogram">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#161a18"/>
+      <stop offset="0.55" stop-color="#0c0e0d"/>
+      <stop offset="1" stop-color="#080909"/>
+    </linearGradient>
+    <linearGradient id="sheen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f5f0e8"/>
+      <stop offset="1" stop-color="#ded7c9"/>
+    </linearGradient>
+  </defs>
+
+  <!-- badge -->
+  <rect x="8" y="8" width="496" height="496" rx="112" fill="url(#bg)"/>
+  <rect x="8" y="8" width="496" height="496" rx="112" fill="none" stroke="#10b981" stroke-opacity="0.28" stroke-width="6"/>
+
+  <!-- M -->
+  <path fill="url(#sheen)" d="
+    M 71 356 L 71 156 L 115 156 L 151 268 L 187 156 L 231 156 L 231 356
+    L 197 356 L 197 225 L 168 318 L 134 318 L 105 225 L 105 356 Z"/>
+
+  <!-- Z -->
+  <path fill="url(#sheen)" d="
+    M 265 156 L 391 156 L 391 188 L 313 324 L 391 324 L 391 356
+    L 265 356 L 265 324 L 343 188 L 265 188 Z"/>
+
+  <!-- emerald period -->
+  <rect x="407" y="322" width="34" height="34" fill="#10b981"/>
+</svg>
